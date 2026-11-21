@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; font-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<title>AI Applications, Automation & Vibe Coding Jobs & Internships</title>
+<style>
+:root{
+  --ease:cubic-bezier(.22,.9,.28,1);
+  --r-lg:18px; --r-md:12px; --r-sm:9px;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --bg2:#111827; --card:rgba(255,255,255,.045); --card-brd:rgba(255,255,255,.09);
+  --text:#e8edf5; --muted:#93a0b4; --chip:rgba(255,255,255,.06); --chip-brd:rgba(255,255,255,.12);
+  --accent:hsl(var(--hue) 85% 62%); --accent2:hsl(calc(var(--hue) + 40) 80% 60%);
+  --accent-ink:#0b0f16; --glow:hsla(var(--hue) 85% 60%/.16);
+  --ok:#34d399; --warn:#fbbf24; --dead:#f87171; --shadow:0 10px 34px rgba(0,0,0,.42);
+  color-scheme:dark;
+}
+html[data-theme="light"]{
+  --bg:#f6f7fb; --bg2:#ffffff; --card:#ffffff; --card-brd:#e5e9f2;
+  --text:#141a26; --muted:#5b6678; --chip:#eef1f7; --chip-brd:#dde3ee;
+  --accent:hsl(var(--hue) 72% 42%); --accent2:hsl(calc(var(--hue) + 40) 70% 46%);
+  --accent-ink:#ffffff; --glow:hsla(var(--hue) 75% 55%/.10);
+  --ok:#0e9f6e; --warn:#b45309; --dead:#dc2626; --shadow:0 8px 26px rgba(20,26,38,.09);
+  color-scheme:light;
+}
+html[data-theme="graphite"]{
+  --bg:#1c1d21; --bg2:#232428; --card:rgba(255,255,255,.05); --card-brd:rgba(255,255,255,.10);
+  --text:#eceef2; --muted:#a3a8b3; --chip:rgba(255,255,255,.07); --chip-brd:rgba(255,255,255,.13);
+  --accent:hsl(var(--hue) 60% 66%); --accent2:hsl(calc(var(--hue) + 40) 58% 64%);
+  --accent-ink:#17181c; --glow:hsla(var(--hue) 60% 62%/.14);
+  --ok:#4ade80; --warn:#fcd34d; --dead:#fca5a5; --shadow:0 10px 30px rgba(0,0,0,.38);
+  color-scheme:dark;
+}
+html[data-theme="navy"]{
+  --bg:#0a1628; --bg2:#0f1e36; --card:rgba(255,255,255,.05); --card-brd:rgba(160,190,255,.14);
+  --text:#e6eefb; --muted:#93a7c7; --chip:rgba(140,175,255,.09); --chip-brd:rgba(140,175,255,.20);
+  --accent:hsl(var(--hue) 88% 66%); --accent2:hsl(calc(var(--hue) + 40) 84% 62%);
+  --accent-ink:#081226; --glow:hsla(var(--hue) 88% 62%/.18);
+  --ok:#34d399; --warn:#fbbf24; --dead:#f87171; --shadow:0 12px 36px rgba(2,8,23,.55);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,"Noto Kufi Arabic","Noto Sans Arabic",sans-serif;
+  background:var(--bg); color:var(--text); min-height:100vh;
+  transition:background .5s var(--ease), color .5s var(--ease);
+  -webkit-font-smoothing:antialiased;
+}
+/* ambient motion layer */
+.ambient{position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 85% -10%, var(--glow), transparent 55%),
+    radial-gradient(110% 80% at -10% 110%, var(--glow), transparent 50%),
+    var(--bg);
+  transition:background .5s var(--ease);
+}
+.blob{position:absolute; border-radius:50%; filter:blur(70px); opacity:.5; will-change:transform}
+.blob.b1{width:44vmax;height:44vmax; top:-16vmax; inset-inline-end:-12vmax; background:hsla(var(--hue) 85% 55%/.16); animation:drift1 26s var(--ease) infinite alternate}
+.blob.b2{width:36vmax;height:36vmax; bottom:-14vmax; inset-inline-start:-10vmax; background:hsla(calc(var(--hue) + 40) 80% 55%/.13); animation:drift2 32s var(--ease) infinite alternate}
+.blob.b3{width:22vmax;height:22vmax; top:38%; inset-inline-start:34%; background:hsla(calc(var(--hue) - 30) 80% 58%/.10); animation:drift3 38s var(--ease) infinite alternate}
+@keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(-6vmax,5vmax) scale(1.12)}}
+@keyframes drift2{from{transform:translate(0,0) scale(1.05)}to{transform:translate(5vmax,-6vmax) scale(.94)}}
+@keyframes drift3{from{transform:translate(0,0)}to{transform:translate(-4vmax,-4vmax) scale(1.15)}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important; transition:none!important; scroll-behavior:auto!important}
+}
+.wrap{max-width:1180px; margin:0 auto; padding:0 18px}
+.skip{position:absolute; inset-inline-start:-999px; top:0; background:var(--accent); color:var(--accent-ink); padding:8px 14px; border-radius:0 0 var(--r-sm) 0; z-index:50}
+.skip:focus{inset-inline-start:0}
+/* header */
+header.bar{position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--card-brd)}
+.bar-in{display:flex; align-items:center; gap:14px; padding:12px 22px; flex-wrap:wrap}
+.brand{font-weight:800; font-size:17px; letter-spacing:.2px; display:flex; align-items:center; gap:9px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2)); box-shadow:0 0 14px var(--glow); animation:pulse 3.4s var(--ease) infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.75}}
+.bar-sp{flex:1}
+.ctl-group{display:flex; align-items:center; gap:8px}
+.ctl-lbl{font-size:12px; color:var(--muted)}
+.seg{display:flex; background:var(--chip); border:1px solid var(--chip-brd); border-radius:999px; padding:3px; gap:2px}
+.seg button{border:0; background:transparent; color:var(--muted); font:inherit; font-size:12.5px; font-weight:650;
+  padding:6px 12px; border-radius:999px; cursor:pointer; transition:all .22s var(--ease)}
+.seg button:hover{color:var(--text)}
+.seg button[aria-pressed="true"]{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:var(--accent-ink)}
+.swatches{display:flex; gap:7px}
+.sw{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent; padding:0;
+  transition:transform .22s var(--ease), border-color .22s var(--ease)}
+.sw:hover{transform:scale(1.18)}
+.sw[aria-pressed="true"]{border-color:var(--accent); transform:scale(1.14)}
+.sw[data-t="light"]{background:linear-gradient(135deg,#ffffff,#dfe5f0)}
+.sw[data-t="dark"]{background:linear-gradient(135deg,#141a26,#2b3648)}
+.sw[data-t="graphite"]{background:linear-gradient(135deg,#3a3b40,#6a6c74)}
+.sw[data-t="navy"]{background:linear-gradient(135deg,#0f1e36,#2b4a7f)}
+/* hero */
+.hero{padding:52px 0 8px}
+.hero h1{font-size:clamp(30px,4.6vw,46px); line-height:1.14; margin:0 0 12px; font-weight:850; letter-spacing:-.5px;
+  background:linear-gradient(120deg,var(--text) 30%,var(--accent) 75%,var(--accent2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+.hero .sub{color:var(--muted); font-size:15.5px; max-width:760px; line-height:1.75; margin:0 0 18px}
+.snap{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--muted);
+  background:var(--chip); border:1px solid var(--chip-brd); border-radius:999px; padding:6px 14px}
+.snap b{color:var(--text); font-weight:700}
+/* breakdown */
+.breaks{display:flex; flex-wrap:wrap; gap:8px; margin:20px 0 4px}
+.bchip{display:inline-flex; align-items:baseline; gap:7px; background:var(--card); border:1px solid var(--card-brd);
+  border-radius:999px; padding:7px 14px; font-size:13px; box-shadow:var(--shadow)}
+.bchip b{font-size:16px; font-weight:800; color:var(--accent); font-variant-numeric:tabular-nums}
+.bchip span{color:var(--muted)}
+/* search */
+.search-zone{position:relative; margin:26px 0 18px; max-width:640px}
+.search-box{display:flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--card-brd);
+  border-radius:999px; padding:5px 8px 5px 20px; box-shadow:var(--shadow); transition:border-color .25s var(--ease), box-shadow .25s var(--ease)}
+[dir="rtl"] .search-box{padding:5px 20px 5px 8px}
+.search-box:focus-within{border-color:var(--accent); box-shadow:0 0 0 4px var(--glow)}
+.search-box svg{flex:none; stroke:var(--muted)}
+.search-box input{flex:1; border:0; background:transparent; color:var(--text); font:inherit; font-size:15px; padding:10px 0; outline:none}
+.search-box input::placeholder{color:var(--muted)}
+.sug{position:absolute; top:calc(100% + 8px); inset-inline:0; background:var(--bg2); border:1px solid var(--card-brd);
+  border-radius:var(--r-lg); box-shadow:var(--shadow); overflow:hidden; z-index:15; display:none}
+.sug.open{display:block; animation:pop .18s var(--ease)}
+@keyframes pop{from{opacity:0; transform:translateY(-6px)}to{opacity:1; transform:none}}
+.sug button{display:flex; width:100%; align-items:center; gap:10px; padding:11px 18px; border:0; background:transparent;
+  color:var(--text); font:inherit; font-size:14px; cursor:pointer; text-align:start}
+.sug button:hover,.sug button:focus-visible{background:var(--chip)}
+.sug .k{font-size:11px; color:var(--muted); border:1px solid var(--chip-brd); border-radius:999px; padding:2px 9px}
+.sug .n{margin-inline-start:auto; color:var(--accent); font-weight:750; font-size:13px}
+/* filters */
+.filters{margin:6px 0 10px}
+.f-row{display:flex; align-items:flex-start; gap:12px; margin:10px 0; flex-wrap:wrap}
+.f-lbl{flex:none; width:86px; padding-top:8px; font-size:12px; font-weight:750; letter-spacing:.8px; text-transform:uppercase; color:var(--muted)}
+.chips{display:flex; flex-wrap:wrap; gap:7px}
+.chip{border:1px solid var(--chip-brd); background:var(--chip); color:var(--text); font:inherit; font-size:13px; font-weight:600;
+  padding:7px 14px; border-radius:999px; cursor:pointer; transition:all .2s var(--ease)}
+.chip:hover{border-color:var(--accent); transform:translateY(-1px)}
+.chip:active{transform:scale(.96)}
+.chip[aria-pressed="true"]{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:var(--accent-ink); border-color:transparent; font-weight:750}
+.chip .c{opacity:.75; font-size:11.5px; font-variant-numeric:tabular-nums}
+.reset{margin-inline-start:auto; align-self:center}
+/* results meta */
+.meta-line{display:flex; align-items:center; gap:10px; margin:16px 0 14px; font-size:13px; color:var(--muted); flex-wrap:wrap}
+.meta-line b{color:var(--text)}
+.export{margin-inline-start:auto}
+.btn{border:0; font:inherit; font-weight:700; font-size:13px; border-radius:999px; padding:9px 18px; cursor:pointer;
+  transition:all .22s var(--ease); background:var(--chip); color:var(--text); border:1px solid var(--chip-brd)}
+.btn:hover{transform:translateY(-1px); border-color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:var(--accent-ink); border:0; box-shadow:0 6px 20px var(--glow)}
+.btn.primary:hover{transform:translateY(-2px); box-shadow:0 10px 26px var(--glow)}
+/* cards */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(345px,1fr)); gap:16px; padding-bottom:40px}
+@media (max-width:420px){.grid{grid-template-columns:1fr}}
+.job{background:var(--card); border:1px solid var(--card-brd); border-radius:var(--r-lg); padding:18px 18px 14px;
+  box-shadow:var(--shadow); backdrop-filter:blur(6px); position:relative; overflow:hidden;
+  opacity:0; transform:translateY(16px); transition:opacity .5s var(--ease), transform .5s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease)}
+.job.in{opacity:1; transform:none}
+.job:hover{transform:translateY(-3px); border-color:color-mix(in srgb, var(--accent) 45%, var(--card-brd)); box-shadow:0 16px 40px var(--glow)}
+.job::before{content:""; position:absolute; inset-inline-start:0; top:0; bottom:0; width:3px;
+  background:linear-gradient(180deg,var(--accent),var(--accent2)); opacity:.85}
+.job-top{display:flex; align-items:center; gap:8px; margin-bottom:9px; flex-wrap:wrap}
+.job-n{font-size:11.5px; color:var(--muted); font-variant-numeric:tabular-nums}
+.tag{font-size:11px; font-weight:750; padding:3px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--chip-brd)}
+.badge{font-size:11px; font-weight:700; padding:3px 10px; border-radius:999px}
+.badge.new{background:color-mix(in srgb, var(--ok) 18%, transparent); color:var(--ok)}
+.badge.old{background:var(--chip); color:var(--muted)}
+.badge.dead{background:color-mix(in srgb, var(--dead) 16%, transparent); color:var(--dead)}
+.job-src{margin-inline-start:auto; font-size:11.5px; color:var(--muted)}
+.job h3{margin:2px 0 8px; font-size:16.5px; line-height:1.45; font-weight:750}
+.co{display:flex; align-items:center; gap:10px; color:var(--muted); font-size:13.5px; margin-bottom:12px}
+.av{flex:none; width:30px; height:30px; border-radius:9px; display:grid; place-items:center; font-size:10.5px; font-weight:800;
+  color:var(--accent-ink); background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.specs{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:0 0 10px; padding:10px 0; border-top:1px solid var(--card-brd); border-bottom:1px solid var(--card-brd)}
+.spec .k{font-size:10px; letter-spacing:.7px; text-transform:uppercase; color:var(--muted); margin-bottom:3px}
+.spec .v{font-size:12.5px; font-weight:650}
+.dates{display:flex; gap:18px; font-size:11.5px; color:var(--muted); margin-bottom:10px; flex-wrap:wrap}
+.dates b{color:var(--text); font-weight:650}
+.note{font-size:12.5px; line-height:1.65; border-radius:var(--r-md); padding:10px 12px; margin-bottom:10px;
+  background:color-mix(in srgb, var(--warn) 12%, transparent); border:1px solid color-mix(in srgb, var(--warn) 30%, transparent)}
+.note b{display:block; color:var(--warn); margin-bottom:2px; font-size:12px}
+.elig{font-size:12px; color:var(--muted); margin-bottom:10px; line-height:1.6}
+.elig b{color:var(--text)}
+.actions{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:4px}
+.apply{display:inline-flex; align-items:center; gap:7px; text-decoration:none; font-size:13.5px; font-weight:750;
+  padding:10px 18px; border-radius:999px; color:var(--accent-ink); background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 6px 18px var(--glow); transition:all .22s var(--ease)}
+.apply:hover{transform:translateY(-2px) scale(1.02); box-shadow:0 10px 26px var(--glow)}
+.apply .ext{font-size:12px; opacity:.85}
+.avail{font-size:11px; color:var(--muted)}
+.mini{display:flex; gap:6px; width:100%; margin-top:8px; flex-wrap:wrap}
+.mini button{font:inherit; font-size:12px; font-weight:650; padding:7px 13px; border-radius:999px; cursor:pointer;
+  background:transparent; color:var(--muted); border:1px solid var(--chip-brd); transition:all .2s var(--ease)}
+.mini button:hover{color:var(--text); border-color:var(--accent)}
+.mini button.on{background:color-mix(in srgb, var(--accent) 20%, transparent); color:var(--accent); border-color:var(--accent)}
+.notes{width:100%; margin-top:8px}
+.notes textarea{width:100%; min-height:64px; resize:vertical; border-radius:var(--r-md); border:1px solid var(--chip-brd);
+  background:var(--bg2); color:var(--text); font:inherit; font-size:13px; padding:10px 12px; outline:none}
+.notes textarea:focus{border-color:var(--accent)}
+/* empty */
+.empty{grid-column:1/-1; text-align:center; padding:64px 20px; color:var(--muted)}
+.empty .big{font-size:42px; margin-bottom:10px}
+.empty h2{color:var(--text); font-size:19px; margin:0 0 8px}
+/* footer */
+footer.site{border-top:1px solid var(--card-brd); padding:26px 0 44px; color:var(--muted); font-size:12.5px; line-height:1.9}
+footer.site b{color:var(--text)}
+:focus-visible{outline:2.5px solid var(--accent); outline-offset:2px; border-radius:6px}
+@media (max-width:760px){
+  .hero{padding:36px 0 4px}
+  .f-lbl{width:100%; padding-top:2px}
+  .specs{grid-template-columns:repeat(2,1fr)}
+  .reset{margin-inline-start:0}
+}
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .55s var(--ease), transform .55s var(--ease)}
+.reveal.in{opacity:1; transform:none}
+details.archive{margin:0 0 40px; border:1px dashed var(--chip-brd); border-radius:var(--r-lg); padding:14px 18px}
+details.archive summary{cursor:pointer; font-size:13.5px; font-weight:700; color:var(--muted)}
+details.archive summary:hover{color:var(--text)}
+details.archive .job{opacity:1; transform:none; filter:saturate(.55)}
+.count-sep{margin:0 4px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" id="skip">Skip to jobs</a>
+<div class="ambient" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<header class="bar">
+  <div class="wrap bar-in">
+    <div class="brand"><span class="dot" aria-hidden="true"></span><span id="brand">Applied AI Opportunities</span></div>
+    <div class="bar-sp"></div>
+    <div class="ctl-group">
+      <span class="ctl-lbl" id="theme-lbl">Theme</span>
+      <div class="swatches" role="group" id="swatches" aria-label="Theme"></div>
+    </div>
+    <div class="ctl-group">
+      <span class="ctl-lbl" id="lang-lbl">Language</span>
+      <div class="seg" role="group" id="langseg">
+        <button type="button" data-l="en">EN</button>
+        <button type="button" data-l="ar">العربية</button>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="main">
+  <section class="hero reveal">
+    <h1 id="h1">AI Applications, Automation & Vibe Coding Jobs & Internships</h1>
+    <p class="sub" id="sub"></p>
+    <span class="snap" id="snap"></span>
+    <div class="breaks" id="breaks"></div>
+  </section>
+  <div class="search-zone reveal">
+    <div class="search-box">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      <input id="q" type="search" autocomplete="off" aria-haspopup="listbox" aria-expanded="false">
+    </div>
+    <div class="sug" id="sug" role="listbox"></div>
+  </div>
+  <section class="filters reveal" aria-label="Filters">
+    <div class="f-row"><span class="f-lbl" id="l-where">Where</span><div class="chips" id="f-region"></div></div>
+    <div class="f-row"><span class="f-lbl" id="l-type">Job type</span><div class="chips" id="f-type"></div></div>
+    <div class="f-row"><span class="f-lbl" id="l-place">Workplace</span><div class="chips" id="f-place"></div></div>
+    <div class="f-row"><span class="f-lbl" id="l-sort">Sort by</span><div class="chips" id="f-sort"></div>
+      <div class="chips" id="f-list" style="margin-inline-start:auto"></div>
+      <button class="btn reset" id="reset" type="button">Clear</button>
+    </div>
+  </section>
+  <div class="meta-line">
+    <span id="count" aria-live="polite"></span>
+    <button class="btn export" id="csv" type="button">Export CSV</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <details class="archive" id="archive" hidden>
+    <summary id="archive-sum"></summary>
+    <div class="grid" id="archive-grid" style="padding-top:14px"></div>
+  </details>
+</main>
+<footer class="site">
+  <div class="wrap" id="foot"></div>
+</footer>
+<script>
+"use strict";
+const SITE = {"key": "ai", "repo": "ai-automation-jobs-internships", "hue": "168", "title_en": "AI Applications, Automation & Vibe Coding Jobs & Internships", "title_ar": "وظائف وتدريبات تطبيقات الذكاء الاصطناعي والأتمتة", "brand_en": "Applied AI Opportunities", "brand_ar": "فرص الذكاء التطبيقي", "sub_en": "Applied AI, automation, agents and vibe coding jobs and internships in Egypt, the Gulf, the USA and Europe. Roles are judged by their actual duties, not their titles; every listing was checked by hand when captured.", "sub_ar": "وظائف وتدريبات الذكاء الاصطناعي التطبيقي والأتمتة والوكلاء والـvibe coding في مصر والخليج وأمريكا وأوروبا. الأدوار بتتقاس بمهامها الفعلية مش بعناوينها؛ وكل إعلان اتراجع يدويًا وقت رصده.", "roles": ["AI Engineer", "Automation", "n8n", "Prompt", "AI Agent", "Workflow", "Machine Learning", "No-Code", "Intern", "Junior"]};
+const DATA = {"updated": "2026-11-08 21:09", "date": "2026-11-08", "jobs": [{"id": "4486669853", "title": "Senior Software Engineer - Applied AI and Integrations", "company": "Aspire, Jordan", "region": "Egypt", "location": "Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-software-engineer-applied-ai-and-integrations-at-aspire-jordan-4486669853", "note": null, "level": "Mid-Senior level", "applicants": "149 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486669853", "elig": "Yes", "link_status": null}, {"id": "4275229612", "title": "Machine Learning Engineer, Applied AI", "company": "Brain Co.", "region": "UAE", "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/machine-learning-engineer-applied-ai-at-brain-co-4275229612", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4275229612", "elig": "Unknown", "link_status": null}, {"id": "4488768771", "title": "AI & Machine Learning Developer", "company": "Riyadh Cables Group", "region": "Saudi Arabia", "location": "Riyadh, Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/ai-machine-learning-developer-at-riyadh-cables-group-4488768771", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488768771", "elig": "Unknown", "link_status": null}, {"id": "4486637150", "title": "Applied AI Engineer", "company": "FDE Times", "region": "Other Gulf", "location": "Kuwait City Metropolitan Area", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://kw.linkedin.com/jobs/view/applied-ai-engineer-at-fde-times-4486637150", "note": null, "level": "Not Applicable", "applicants": "82 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486637150", "elig": "Unknown", "link_status": null}, {"id": "4470186728", "title": "Machine Learning Intern (Masters) - Summer 2027", "company": "DoorDash", "region": "USA", "location": "San Francisco, CA", "workplace": "Not stated", "type": "Internship", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/machine-learning-intern-masters-summer-2027-at-doordash-4470186728", "note": null, "level": "Not Applicable", "applicants": "175 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4470186728", "elig": "Unknown", "link_status": null}, {"id": "4453730647", "title": "Principal Product Manager- Conversational AI", "company": "Hopper", "region": "USA & Canada", "location": "Toronto, Ontario, Canada", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://ca.linkedin.com/jobs/view/principal-product-manager-conversational-ai-at-hopper-4453730647", "note": null, "level": "Not Applicable", "applicants": "144 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4453730647", "elig": "Unknown", "link_status": null}, {"id": "4480590795", "title": "AI Engineer (Agentic AI)", "company": "Navy Federal Credit Union", "region": "USA", "location": "Vienna, VA", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/ai-engineer-agentic-ai-at-navy-federal-credit-union-4480590795", "note": "Check eligibility: No visa sponsorship", "level": "Not Applicable", "applicants": "125 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4480590795", "elig": "Unknown", "link_status": null}, {"id": "4470199927", "title": "Junior/Mid-Level GenAI Engineer | Hungary", "company": "Deloitte", "region": "Europe", "location": "Budapest, Budapest, Hungary", "workplace": "Hybrid", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://hu.linkedin.com/jobs/view/junior-mid-level-genai-engineer-hungary-at-deloitte-4470199927", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4470199927", "elig": "Unknown", "link_status": null}, {"id": "4488791931", "title": "AI application Developer", "company": "Xceed", "region": "Egypt", "location": "Nasr City, Cairo, Egypt", "workplace": "Onsite", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-application-developer-at-xceed-4488791931", "note": null, "level": "Entry level", "applicants": "26 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488791931", "elig": "Yes", "link_status": null}, {"id": "4395971124", "title": "Senior Machine Learning Engineer", "company": "SAP", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/senior-machine-learning-engineer-at-sap-4395971124", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4395971124", "elig": "Unknown", "link_status": null}, {"id": "4488409503", "title": "Applied AI Engineer", "company": "Scale", "region": "Other Gulf", "location": "Kuwait City, Al Asimah, Kuwait", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://kw.linkedin.com/jobs/view/applied-ai-engineer-at-scale-4488409503", "note": null, "level": "Not Applicable", "applicants": "93 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488409503", "elig": "Unknown", "link_status": null}, {"id": "4487622467", "title": "MLOps Engineer", "company": "Evlo AI", "region": "USA", "location": "Seattle, WA", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/mlops-engineer-at-evlo-ai-4487622467", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487622467", "elig": "Unknown", "link_status": null}, {"id": "4488476192", "title": "AI Engineer I | Ingénieur.e IA I", "company": "Sadie", "region": "USA & Canada", "location": "Saint-Laurent, Quebec, Canada", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ca.linkedin.com/jobs/view/ai-engineer-i-ing%C3%A9nieur-e-ia-i-at-sadie-4488476192", "note": null, "level": "Not Applicable", "applicants": "61 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488476192", "elig": "Unknown", "link_status": null}, {"id": "4468810396", "title": "Senior Machine Learning Engineer I, Search Ads", "company": "Etsy", "region": "Europe", "location": "Dublin, County Dublin, Ireland", "workplace": "Onsite", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ie.linkedin.com/jobs/view/senior-machine-learning-engineer-i-search-ads-at-etsy-4468810396", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4468810396", "elig": "Unknown", "link_status": null}, {"id": "4488801164", "title": "AI Services Product Owner", "company": "Henkel", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Remote", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-services-product-owner-at-henkel-4488801164", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488801164", "elig": "Yes", "link_status": null}, {"id": "4486681740", "title": "Applied AI/ML Scientist", "company": "FDE Times", "region": "UAE", "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/applied-ai-ml-scientist-at-fde-times-4486681740", "note": null, "level": "Not Applicable", "applicants": "38 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486681740", "elig": "Unknown", "link_status": null}, {"id": "4441834978", "title": "Senior AI Engineer - Professional Services - KSA", "company": "DataRobot", "region": "Saudi Arabia", "location": "Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/senior-ai-engineer-professional-services-ksa-at-datarobot-4441834978", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4441834978", "elig": "Unknown", "link_status": null}, {"id": "4488458020", "title": "Senior Machine Learning Engineer", "company": "Atlassian", "region": "USA", "location": "San Francisco, CA", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-at-atlassian-4488458020", "note": null, "level": "Mid-Senior level", "applicants": "47 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488458020", "elig": "Unknown", "link_status": null}, {"id": "4486997613", "title": "Prompt Engineer (w/m/d)", "company": "1&1", "region": "Europe", "location": "Montabaur, Rhineland-Palatinate, Germany", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://de.linkedin.com/jobs/view/prompt-engineer-w-m-d-at-1-1-4486997613", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486997613", "elig": "Unknown", "link_status": null}, {"id": "4488720593", "title": "Senior ML Engineer", "company": "SSC HR Solutions", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-ml-engineer-at-ssc-hr-solutions-4488720593", "note": null, "level": "Not Applicable", "applicants": "102 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488720593", "elig": "Yes", "link_status": null}, {"id": "4486626116", "title": "AI Operations & Community Research Intern", "company": "Diamond Living Real Estate", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Remote", "type": "Internship", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-operations-community-research-intern-at-diamond-living-real-estate-4486626116", "note": null, "level": "Internship", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486626116", "elig": "Unknown", "link_status": null}, {"id": "4486990976", "title": "Solution Engineer — Edge Agentic AI", "company": "Intel", "region": "Saudi Arabia", "location": "Riyadh, Riyadh, Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/solution-engineer-%E2%80%94-edge-agentic-ai-at-intel-4486990976", "note": null, "level": "Not Applicable", "applicants": "178 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486990976", "elig": "Unknown", "link_status": null}, {"id": "4485820434", "title": "AI Technician", "company": "American International University, Kuwait", "region": "Other Gulf", "location": "Jahra, Jahra, Kuwait", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://kw.linkedin.com/jobs/view/ai-technician-at-american-international-university-kuwait-4485820434", "note": null, "level": "Not Applicable", "applicants": "90 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4485820434", "elig": "Unknown", "link_status": null}, {"id": "4462862518", "title": "Senior Developer - Voice AI", "company": "United Airlines", "region": "USA", "location": "Chicago, IL", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/senior-developer-voice-ai-at-united-airlines-4462862518", "note": "Check eligibility: No visa sponsorship", "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4462862518", "elig": "Unknown", "link_status": null}, {"id": "4488127564", "title": "Computer Vision Engineer", "company": "ADB SAFEGATE", "region": "Europe", "location": "Malmo, Skåne County, Sweden", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://se.linkedin.com/jobs/view/computer-vision-engineer-at-adb-safegate-4488127564", "note": null, "level": "Not Applicable", "applicants": "31 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488127564", "elig": "Unknown", "link_status": null}, {"id": "4486239988", "title": "Senior AI/LLM Engineer (Python) - Remote", "company": "Kake", "region": "Egypt", "location": "Cairo, Egypt", "workplace": "Remote", "type": "Contract", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-ai-llm-engineer-python-remote-at-kake-4486239988", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486239988", "elig": "Yes", "link_status": null}, {"id": "4488712026", "title": "Backend AI Developer (Smart Home & Agentic Systems)", "company": "The Greater Change", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/backend-ai-developer-smart-home-agentic-systems-at-the-greater-change-4488712026", "note": null, "level": "Associate", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488712026", "elig": "Unknown", "link_status": null}, {"id": "4486992956", "title": "AI Solution Architect — Edge Agentic and Physical AI", "company": "Intel", "region": "Saudi Arabia", "location": "Riyadh, Riyadh, Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/ai-solution-architect-%E2%80%94-edge-agentic-and-physical-ai-at-intel-4486992956", "note": null, "level": "Not Applicable", "applicants": "139 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486992956", "elig": "Unknown", "link_status": null}, {"id": "4479092233", "title": "Machine Learning Platform Engineer", "company": "RaySearch Laboratories", "region": "Europe", "location": "Stockholm, Stockholm County, Sweden", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://se.linkedin.com/jobs/view/machine-learning-platform-engineer-at-raysearch-laboratories-4479092233", "note": null, "level": "Not Applicable", "applicants": "91 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4479092233", "elig": "Unknown", "link_status": null}, {"id": "4462480871", "title": "AI Engineer - Research, AI4ALL", "company": "Valeo", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-engineer-research-ai4all-at-valeo-4462480871", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4462480871", "elig": "Yes", "link_status": null}, {"id": "4488499477", "title": "Senior AI Systems & Local LLM Engineer (Smart Home & Agentic AI)", "company": "The Greater Change", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Hybrid", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/senior-ai-systems-local-llm-engineer-smart-home-agentic-ai-at-the-greater-change-4488499477", "note": null, "level": "Associate", "applicants": "53 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488499477", "elig": "Unknown", "link_status": null}, {"id": "4479135168", "title": "Manager, Exploration & Mining Artificial Intelligence - Acting", "company": "Maaden", "region": "Saudi Arabia", "location": "Riyadh, Riyadh, Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/manager-exploration-mining-artificial-intelligence-acting-at-maaden-4479135168", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4479135168", "elig": "Unknown", "link_status": null}, {"id": "4459507501", "title": "Full Stack AI Developer (Python/React)", "company": "Filed", "region": "Europe", "location": "Stockholm, Stockholm County, Sweden", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://se.linkedin.com/jobs/view/full-stack-ai-developer-python-react-at-filed-4459507501", "note": null, "level": "Not Applicable", "applicants": "183 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4459507501", "elig": "Unknown", "link_status": null}, {"id": "4487739067", "title": "Senior Automation Engineer - General DCS", "company": "Advansys Intelligent Solutions", "region": "Egypt", "location": "Nasr City, Cairo, Egypt", "workplace": "Onsite", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-automation-engineer-general-dcs-at-advansys-intelligent-solutions-4487739067", "note": null, "level": "Not Applicable", "applicants": "34 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487739067", "elig": "Yes", "link_status": null}, {"id": "4487389969", "title": "AI Platform Engineer (Serverless Training and Inference)", "company": "Revolut", "region": "UAE", "location": "United Arab Emirates", "workplace": "Onsite", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-platform-engineer-serverless-training-and-inference-at-revolut-4487389969", "note": null, "level": "Not Applicable", "applicants": "79 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487389969", "elig": "Unknown", "link_status": null}, {"id": "4486733596", "title": "Staff AI Engineer", "company": "Jobgether", "region": "Saudi Arabia", "location": "Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/staff-ai-engineer-at-jobgether-4486733596", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486733596", "elig": "Unknown", "link_status": null}, {"id": "4484373038", "title": "AI Proxy Product Owner", "company": "Konecta", "region": "Egypt", "location": "New Cairo, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-02", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-proxy-product-owner-at-konecta-4484373038", "note": null, "level": "Associate", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4484373038", "elig": "Yes", "link_status": null}, {"id": "4487730002", "title": "Machine Learning Engineer", "company": "ai71", "region": "UAE", "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/machine-learning-engineer-at-ai71-4487730002", "note": null, "level": "Not Applicable", "applicants": "76 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487730002", "elig": "Unknown", "link_status": null}, {"id": "4477221148", "title": "Senior AI Software Engineer", "company": "LEONI EGYPT", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-01", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-ai-software-engineer-at-leoni-egypt-4477221148", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4477221148", "elig": "Yes", "link_status": null}, {"id": "4485808762", "title": "Senior AI/Machine Learning Engineer", "company": "AutoData Middle East", "region": "UAE", "location": "Dubai, United Arab Emirates", "workplace": "Onsite", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/senior-ai-machine-learning-engineer-at-autodata-middle-east-4485808762", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4485808762", "elig": "Unknown", "link_status": null}, {"id": "4460388911", "title": "Senior Cloud Engineer - AI-ML Platform (all genders)", "company": "Merck Group", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-01", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-cloud-engineer-ai-ml-platform-all-genders-at-merck-group-4460388911", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4460388911", "elig": "Yes", "link_status": null}, {"id": "4485818777", "title": "AI Engineer - Investment Management", "company": "Durlston Partners", "region": "UAE", "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-engineer-investment-management-at-durlston-partners-4485818777", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4485818777", "elig": "Unknown", "link_status": null}, {"id": "4485673959", "title": "Senior Lead Agentic Developer", "company": "Integrant, Inc.", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Hybrid", "type": "Full-time", "posted": "2026-10-31", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-lead-agentic-developer-at-integrant-inc-4485673959", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4485673959", "elig": "Yes", "link_status": null}, {"id": "4485860662", "title": "Principal AI Engineer - AI Tutor", "company": "DataCamp", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/principal-ai-engineer-ai-tutor-at-datacamp-4485860662", "note": null, "level": "Director", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4485860662", "elig": "Unknown", "link_status": null}, {"id": "4484987351", "title": "AI Engineer", "company": "PaxeraHealth", "region": "Egypt", "location": "6th of October, Al Jizah, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-10-29", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-engineer-at-paxerahealth-4484987351", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4484987351", "elig": "Yes", "link_status": null}, {"id": "4477738155", "title": "AI/ML Software Engineer Intern (Summer 2027 - 8-Months - Masters - QVS)", "company": "Electronic Arts (EA)", "region": "USA & Canada", "location": "Vancouver, British Columbia, Canada", "workplace": "Not stated", "type": "Internship", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ca.linkedin.com/jobs/view/ai-ml-software-engineer-intern-summer-2027-8-months-masters-qvs-at-electronic-arts-ea-4477738155", "note": "Check eligibility: No visa sponsorship", "level": "Internship", "applicants": "114 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4477738155", "elig": "Unknown", "link_status": null}, {"id": "4466812659", "title": "Machine Learning Applied Scientist (Co-op)", "company": "Apera AI", "region": "USA & Canada", "location": "Vancouver, British Columbia, Canada", "workplace": "Not stated", "type": "Internship", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ca.linkedin.com/jobs/view/machine-learning-applied-scientist-co-op-at-apera-ai-4466812659", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4466812659", "elig": "Unknown", "link_status": null}, {"id": "4487242585", "title": "Agentic Operator Internship — Product Building", "company": "The Utopia Studio", "region": "Other Gulf", "location": "Doha, Doha, Qatar", "workplace": "Hybrid", "type": "Internship", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://qa.linkedin.com/jobs/view/agentic-operator-internship-%E2%80%94-product-building-at-the-utopia-studio-4487242585", "note": null, "level": "Not Applicable", "applicants": "103 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487242585", "elig": "Unknown", "link_status": null}, {"id": "4487236744", "title": "Agentic Operator Internship — Marketers Team", "company": "The Utopia Studio", "region": "Other Gulf", "location": "Doha, Doha, Qatar", "workplace": "Hybrid", "type": "Internship", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://qa.linkedin.com/jobs/view/agentic-operator-internship-%E2%80%94-marketers-team-at-the-utopia-studio-4487236744", "note": null, "level": "Not Applicable", "applicants": "37 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487236744", "elig": "Unknown", "link_status": null}, {"id": "4486755931", "title": "FY27 Intern - Machine Learning Engineering Internship - Canada (4 months)", "company": "Qualcomm", "region": "USA & Canada", "location": "Markham, Ontario, Canada", "workplace": "Not stated", "type": "Internship", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://ca.linkedin.com/jobs/view/fy27-intern-machine-learning-engineering-internship-canada-4-months-at-qualcomm-4486755931", "note": null, "level": "Not Applicable", "applicants": "194 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 20:56", "status": "earlier_today", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486755931", "elig": "Unknown", "link_status": null}, {"id": "4324179613", "title": "Research Engineer in the Center for Interdisciplinary Data Science and Artificial Intelligence (CIDSAI) - Dr. Pierre Youssef", "company": "New York University Abu Dhabi", "region": "UAE", "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/research-engineer-in-the-center-for-interdisciplinary-data-science-and-artificial-intelligence-cidsai-dr-pierre-youssef-at-new-york-university-abu-dhabi-4324179613", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4324179613", "elig": "Unknown", "link_status": null}, {"id": "4488810074", "title": "AI Product Owner", "company": "Fuse Energy", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-08", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-product-owner-at-fuse-energy-4488810074", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488810074", "elig": "Unknown", "link_status": null}, {"id": "4486633435", "title": "Senior Machine Learning Engineer, LLM Inference Optimization", "company": "FDE Times", "region": "UAE", "location": "United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/senior-machine-learning-engineer-llm-inference-optimization-at-fde-times-4486633435", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486633435", "elig": "Unknown", "link_status": null}, {"id": "4488711111", "title": "Senior AI Systems Engineer (Agentic & Smart Home)", "company": "The Greater Change", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/senior-ai-systems-engineer-agentic-smart-home-at-the-greater-change-4488711111", "note": null, "level": "Associate", "applicants": "112 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488711111", "elig": "Unknown", "link_status": null}, {"id": "4486635341", "title": "Lead Software Engineer - Generative AI", "company": "FDE Times", "region": "UAE", "location": "United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/lead-software-engineer-generative-ai-at-fde-times-4486635341", "note": null, "level": "Not Applicable", "applicants": "71 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486635341", "elig": "Unknown", "link_status": null}, {"id": "4488714010", "title": "AI Data Analyst (Predictive Intelligence & Agentic Systems)", "company": "The Greater Change", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-data-analyst-predictive-intelligence-agentic-systems-at-the-greater-change-4488714010", "note": null, "level": "Associate", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488714010", "elig": "Unknown", "link_status": null}, {"id": "4486627727", "title": "Senior Applied Scientist, Efficient LLM Inference & Model Optimization", "company": "FDE Times", "region": "UAE", "location": "United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/senior-applied-scientist-efficient-llm-inference-model-optimization-at-fde-times-4486627727", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486627727", "elig": "Unknown", "link_status": null}, {"id": "4488486084", "title": "AI Data Analyst & Reporting Specialist", "company": "Alliance Recruitment Agency", "region": "UAE", "location": "Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-07", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-data-analyst-reporting-specialist-at-alliance-recruitment-agency-4488486084", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488486084", "elig": "Unknown", "link_status": null}, {"id": "4488092965", "title": "Artificial Intelligence Engineer", "company": "Aspire Manpower Services", "region": "UAE", "location": "Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/artificial-intelligence-engineer-at-aspire-manpower-services-4488092965", "note": null, "level": "Associate", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488092965", "elig": "Unknown", "link_status": null}, {"id": "4488128002", "title": "Data & AI Expert (UAE National)", "company": "Confidential", "region": "UAE", "location": "Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/data-ai-expert-uae-national-at-confidential-4488128002", "note": null, "level": "Not Applicable", "applicants": "100 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4488128002", "elig": "Unknown", "link_status": null}, {"id": "4336821317", "title": "Product Manager of AI Applications, Global Public Sector", "company": "Scale", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/product-manager-of-ai-applications-global-public-sector-at-scale-4336821317", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4336821317", "elig": "Unknown", "link_status": null}, {"id": "4486962752", "title": "Senior Backend / Workflow Engineer (m/f/d)", "company": "Halian | Managed Services, Recruitment Agency & Contract Staffing", "region": "UAE", "location": "Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/senior-backend-workflow-engineer-m-f-d-at-halian-managed-services-recruitment-agency-contract-staffing-4486962752", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486962752", "elig": "Unknown", "link_status": null}, {"id": "4452362869", "title": "Sr. Data Scientist (AI & ML)", "company": "talabat", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/sr-data-scientist-ai-ml-at-talabat-4452362869", "note": null, "level": "Mid-Senior level", "applicants": "67 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4452362869", "elig": "Unknown", "link_status": null}, {"id": "4486206200", "title": "Principal AI Engineer", "company": "Hays", "region": "UAE", "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/principal-ai-engineer-at-hays-4486206200", "note": null, "level": "Mid-Senior level", "applicants": "163 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486206200", "elig": "Unknown", "link_status": null}, {"id": "4486972564", "title": "AI Automation Engineer (m/f/d)", "company": "Halian | Managed Services, Recruitment Agency & Contract Staffing", "region": "UAE", "location": "Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-automation-engineer-m-f-d-at-halian-managed-services-recruitment-agency-contract-staffing-4486972564", "note": null, "level": "Not Applicable", "applicants": "198 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486972564", "elig": "Unknown", "link_status": null}, {"id": "4486977061", "title": "Senior AI Automation Engineer (m/f/d)", "company": "Halian | Managed Services, Recruitment Agency & Contract Staffing", "region": "UAE", "location": "Abu Dhabi Emirate, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/senior-ai-automation-engineer-m-f-d-at-halian-managed-services-recruitment-agency-contract-staffing-4486977061", "note": null, "level": "Mid-Senior level", "applicants": "143 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486977061", "elig": "Unknown", "link_status": null}, {"id": "4486242367", "title": "AI Workflow Specialist (On-site in Dubai)", "company": "Puffy", "region": "UAE", "location": "Dubai, United Arab Emirates", "workplace": "Onsite", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-workflow-specialist-on-site-in-dubai-at-puffy-4486242367", "note": null, "level": "Mid-Senior level", "applicants": "165 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486242367", "elig": "Unknown", "link_status": null}, {"id": "4487345492", "title": "AI Data Analytics Intern", "company": "BNESIM", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Onsite", "type": "Internship", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/ai-data-analytics-intern-at-bnesim-4487345492", "note": null, "level": "Entry level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487345492", "elig": "Unknown", "link_status": null}, {"id": "4476322990", "title": "Associate AI Product Builder", "company": "Property Finder", "region": "UAE", "location": "Dubai, Dubai, United Arab Emirates", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-06", "source": "LinkedIn", "url": "https://ae.linkedin.com/jobs/view/associate-ai-product-builder-at-property-finder-4476322990", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4476322990", "elig": "Unknown", "link_status": null}, {"id": "4443838599", "title": "Senior Product Manager – Data Analytics & AI", "company": "Siemens Energy", "region": "Europe", "location": "Amadora, Lisbon, Portugal", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://pt.linkedin.com/jobs/view/senior-product-manager-%E2%80%93-data-analytics-ai-at-siemens-energy-4443838599", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4443838599", "elig": "Unknown", "link_status": null}, {"id": "4487736129", "title": "Senior Automation Engineer - Honeywell", "company": "Advansys Intelligent Solutions", "region": "Egypt", "location": "Nasr City, Cairo, Egypt", "workplace": "Onsite", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-automation-engineer-honeywell-at-advansys-intelligent-solutions-4487736129", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487736129", "elig": "Yes", "link_status": null}, {"id": "4487732831", "title": "AI Engineer", "company": "Saudi Air Navigation Services", "region": "Saudi Arabia", "location": "Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/ai-engineer-at-saudi-air-navigation-services-4487732831", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487732831", "elig": "Unknown", "link_status": null}, {"id": "4476671102", "title": "AI Solution Architect", "company": "NTT DATA, Inc.", "region": "Saudi Arabia", "location": "Riyadh, Riyadh, Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/ai-solution-architect-at-ntt-data-inc-4476671102", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4476671102", "elig": "Unknown", "link_status": null}, {"id": "4485829491", "title": "Artificial Intelligence Intern", "company": "Panda Retail Company – Savola Group", "region": "Saudi Arabia", "location": "Jeddah, Makkah, Saudi Arabia", "workplace": "Not stated", "type": "Internship", "posted": "2026-11-05", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/artificial-intelligence-intern-at-panda-retail-company-%E2%80%93-savola-group-4485829491", "note": null, "level": "Internship", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4485829491", "elig": "Unknown", "link_status": null}, {"id": "4336811326", "title": "Product Manager of AI Applications, Global Public Sector", "company": "Scale", "region": "Other Gulf", "location": "Doha, Qatar", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://qa.linkedin.com/jobs/view/product-manager-of-ai-applications-global-public-sector-at-scale-4336811326", "note": null, "level": "Mid-Senior level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4336811326", "elig": "Unknown", "link_status": null}, {"id": "4487201656", "title": "AI Red Team Tester", "company": "Alignerr", "region": "Egypt", "location": "Egypt", "workplace": "Remote", "type": "Contract", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-red-team-tester-at-alignerr-4487201656", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487201656", "elig": "Yes", "link_status": null}, {"id": "4486391531", "title": "Senior Product Manager II -Agent Tootling", "company": "Snoonu", "region": "Other Gulf", "location": "Lusail, Qatar", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://qa.linkedin.com/jobs/view/senior-product-manager-ii-agent-tootling-at-snoonu-4486391531", "note": null, "level": "Mid-Senior level", "applicants": "40 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486391531", "elig": "Unknown", "link_status": null}, {"id": "4470475338", "title": "Agentic AI Engineer (m/f/d)", "company": "SIXT", "region": "Europe", "location": "Lisbon Metropolitan Area", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://pt.linkedin.com/jobs/view/agentic-ai-engineer-m-f-d-at-sixt-4470475338", "note": null, "level": "Associate", "applicants": "126 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4470475338", "elig": "Unknown", "link_status": null}, {"id": "4485503448", "title": "Senior Software Engineer (Fullstack + GenAI) - VOIS", "company": "VOIS", "region": "Egypt", "location": "Giza, Al Jizah, Egypt", "workplace": "Hybrid", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/senior-software-engineer-fullstack-%2B-genai-vois-at-vois-4485503448", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4485503448", "elig": "Yes", "link_status": null}, {"id": "4487530165", "title": "Principal Product Manager - Core Product & AI Agents", "company": "Searchable", "region": "Europe", "location": "London, England, United Kingdom", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://uk.linkedin.com/jobs/view/principal-product-manager-core-product-ai-agents-at-searchable-4487530165", "note": null, "level": "Not Applicable", "applicants": "36 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487530165", "elig": "Unknown", "link_status": null}, {"id": "4487218018", "title": "AI Training Specialist", "company": "Alignerr", "region": "Egypt", "location": "Egypt", "workplace": "Remote", "type": "Contract", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-training-specialist-at-alignerr-4487218018", "note": null, "level": "Not Applicable", "applicants": "70 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4487218018", "elig": "Yes", "link_status": null}, {"id": "4461088796", "title": "Staff AI Product Manager", "company": "Fin", "region": "Europe", "location": "London, England, United Kingdom", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://uk.linkedin.com/jobs/view/staff-ai-product-manager-at-fin-4461088796", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4461088796", "elig": "Unknown", "link_status": null}, {"id": "4486356857", "title": "Senior Architect, Enterprise Agentic Automation", "company": "Jobgether", "region": "Saudi Arabia", "location": "Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/senior-architect-enterprise-agentic-automation-at-jobgether-4486356857", "note": null, "level": "Not Applicable", "applicants": "37 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486356857", "elig": "Unknown", "link_status": null}, {"id": "4467078704", "title": "Project & Automation Engineer", "company": "ETAP Software", "region": "Saudi Arabia", "location": "Saudi Arabia", "workplace": "Hybrid", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/project-automation-engineer-at-etap-software-4467078704", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4467078704", "elig": "Unknown", "link_status": null}, {"id": "4460213959", "title": "Automation Engineer", "company": "Lenovo", "region": "Saudi Arabia", "location": "Riyadh, Riyadh, Saudi Arabia", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/automation-engineer-at-lenovo-4460213959", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4460213959", "elig": "Unknown", "link_status": null}, {"id": "4486338765", "title": "AI Research Engineer (Agentic Reinforcement Learning)", "company": "Jobgether", "region": "Saudi Arabia", "location": "Saudi Arabia", "workplace": "Remote", "type": "Full-time", "posted": "2026-11-04", "source": "LinkedIn", "url": "https://sa.linkedin.com/jobs/view/ai-research-engineer-agentic-reinforcement-learning-at-jobgether-4486338765", "note": null, "level": "Not Applicable", "applicants": "60 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486338765", "elig": "Unknown", "link_status": null}, {"id": "4486094160", "title": "Senior Principal, AI Product Manager", "company": "Schneider Electric", "region": "USA", "location": "Boston, MA", "workplace": "Remote", "type": "Full-time", "posted": "2026-11-03", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/senior-principal-ai-product-manager-at-schneider-electric-4486094160", "note": null, "level": "Mid-Senior level", "applicants": "36 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486094160", "elig": "Unknown", "link_status": null}, {"id": "4470957283", "title": "Software Engineer AI - Alexandria", "company": "Sana Commerce", "region": "Egypt", "location": "Alexandria, Alexandria, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-03", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/software-engineer-ai-alexandria-at-sana-commerce-4470957283", "note": null, "level": "Mid-Senior level", "applicants": "37 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4470957283", "elig": "Yes", "link_status": null}, {"id": "4476468548", "title": "Senior AI Engineer - Generative AI & Search - Artificial Intelligence", "company": "Bloomberg", "region": "Europe", "location": "London, England, United Kingdom", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-03", "source": "LinkedIn", "url": "https://uk.linkedin.com/jobs/view/senior-ai-engineer-generative-ai-search-artificial-intelligence-at-bloomberg-4476468548", "note": null, "level": "Not Applicable", "applicants": "171 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4476468548", "elig": "Unknown", "link_status": null}, {"id": "4486835396", "title": "Ingénieur MLOps Cloud IA (H/F)", "company": "T&S (Technology & Strategy)", "region": "Europe", "location": "Toulon, Provence-Alpes-Côte d'Azur, France", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-03", "source": "LinkedIn", "url": "https://fr.linkedin.com/jobs/view/ing%C3%A9nieur-mlops-cloud-ia-h-f-at-t-s-technology-strategy-4486835396", "note": null, "level": "Mid-Senior level", "applicants": "32 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486835396", "elig": "Unknown", "link_status": null}, {"id": "4486134507", "title": "Junior AI Engineer", "company": "BlackStone eIT", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-02", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/junior-ai-engineer-at-blackstone-eit-4486134507", "note": null, "level": "Entry level", "applicants": "195 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": true, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486134507", "elig": "Yes", "link_status": null}, {"id": "4484357780", "title": "AI & Analytics - Data AI & Solutions Lead - Cairo", "company": "Infomineo", "region": "Egypt", "location": "Cairo, Egypt", "workplace": "Hybrid", "type": "Full-time", "posted": "2026-11-02", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-analytics-data-ai-solutions-lead-cairo-at-infomineo-4484357780", "note": null, "level": "Mid-Senior level", "applicants": "90 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4484357780", "elig": "Yes", "link_status": null}, {"id": "4478280550", "title": "AI/ML Engineer", "company": "Air Apps", "region": "Europe", "location": "Lisbon, Lisbon, Portugal", "workplace": "Remote", "type": "Full-time", "posted": "2026-11-02", "source": "LinkedIn", "url": "https://pt.linkedin.com/jobs/view/ai-ml-engineer-at-air-apps-4478280550", "note": null, "level": "Not Applicable", "applicants": "44 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4478280550", "elig": "Unknown", "link_status": null}, {"id": "4392443474", "title": "Forward Deployed AI Engineer, Egypt - BCG X", "company": "BCG X", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-02", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/forward-deployed-ai-engineer-egypt-bcg-x-at-bcg-x-4392443474", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4392443474", "elig": "Yes", "link_status": null}, {"id": "4486140201", "title": "Technical Automation Engineer", "company": "Mas Automation", "region": "Egypt", "location": "Qesm El Maadi, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-02", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/technical-automation-engineer-at-mas-automation-4486140201", "note": null, "level": "Entry level", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4486140201", "elig": "Yes", "link_status": null}, {"id": "4484354510", "title": "AI & Analytics - Sr. Software Engineer with AI Background - Cairo", "company": "Infomineo", "region": "Egypt", "location": "Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-11-02", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-analytics-sr-software-engineer-with-ai-background-cairo-at-infomineo-4484354510", "note": null, "level": "Mid-Senior level", "applicants": "147 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4484354510", "elig": "Yes", "link_status": null}, {"id": "4460137190", "title": "Associate - Full-Stack AI Engineer", "company": "New York Life", "region": "USA", "location": "New York, NY", "workplace": "Hybrid", "type": "Full-time", "posted": "2026-10-31", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/associate-full-stack-ai-engineer-at-new-york-life-4460137190", "note": null, "level": "Not Applicable", "applicants": null, "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4460137190", "elig": "Unknown", "link_status": null}, {"id": "4485382642", "title": "Applied AI Engineer", "company": "Slang AI", "region": "USA", "location": "New York, NY", "workplace": "Hybrid", "type": "Full-time", "posted": "2026-10-30", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/applied-ai-engineer-at-slang-ai-4485382642", "note": null, "level": "Not Applicable", "applicants": "125 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4485382642", "elig": "Unknown", "link_status": null}, {"id": "4484436925", "title": "AI Engineer", "company": "LamdaX", "region": "Egypt", "location": "Cairo, Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-10-28", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/ai-engineer-at-lamdax-4484436925", "note": null, "level": "Entry level", "applicants": "86 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4484436925", "elig": "Yes", "link_status": null}, {"id": "4484465183", "title": "Software development/AI/QC/Product /UX/UI Internships", "company": "LamdaX", "region": "Egypt", "location": "Egypt", "workplace": "Remote", "type": "Volunteer", "posted": "2026-10-28", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/software-development-ai-qc-product-ux-ui-internships-at-lamdax-4484465183", "note": null, "level": "Internship", "applicants": "31 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4484465183", "elig": "Yes", "link_status": null}, {"id": "4483737259", "title": "L3 Automation Engineer", "company": "DXC Technology", "region": "Egypt", "location": "Cairo, Egypt", "workplace": "Not stated", "type": "Full-time", "posted": "2026-10-26", "source": "LinkedIn", "url": "https://eg.linkedin.com/jobs/view/l3-automation-engineer-at-dxc-technology-4483737259", "note": null, "level": "Mid-Senior level", "applicants": "40 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4483737259", "elig": "Yes", "link_status": null}, {"id": "4465111236", "title": "Senior Software Engineer - AI", "company": "Docusign", "region": "USA", "location": "San Francisco, CA", "workplace": "Not stated", "type": "Full-time", "posted": "2026-10-25", "source": "LinkedIn", "url": "https://www.linkedin.com/jobs/view/senior-software-engineer-ai-at-docusign-4465111236", "note": null, "level": "Not Applicable", "applicants": "163 apps", "live": false, "first_seen": "2026-11-08", "first_seen_at": "2026-11-08 21:10", "status": "new_update", "featured": false, "vlabel": "Availability not verified", "canonical_key": "linkedin:4465111236", "elig": "Unknown", "link_status": null}], "_derived": {"baseline": "AI-jobs-2026-11-08.html", "transform": "PB06 merge application v1", "immutable_input": true, "publication": "reserved"}};
+const ALL = DATA.jobs;
+const isDead = j => j.link_status && String(j.link_status).startsWith("dead");
+const JOBS = ALL.filter(j => !isDead(j));
+const ARCHIVED = ALL.filter(j => isDead(j));
+
+const I18N = {
+en:{
+  skip:"Skip to jobs", theme:"Theme", lang:"Language", sub:SITE.sub_en,
+  snapshot:d=>`Snapshot dated ${d} · Cairo time. This is a dated, work-in-progress snapshot: listings may have changed or closed since. Availability has not been re-verified against live sources.`,
+  searchPh:"Search title, company, city…", where:"Where", type:"Job type", place:"Workplace", sort:"Sort by",
+  all:"All", clear:"Clear filters", csv:"Export CSV",
+  sorts:{recent:"Recently posted",oldest:"Oldest posted",intern:"Internships first",comp:"Least competition"},
+  lists:{all:"All jobs",saved:"Saved",applied:"Applied",hidden:"Hidden"},
+  count:(n,t)=>`Showing ${n} of ${t} verified snapshot listings`,
+  archive:n=>`${n} listing${n===1?"":"s"} reported closed since the snapshot (kept for the record)`,
+  internships:n=>`${n} internships in this snapshot`,
+  workplace:"Workplace", jtype:"Type", seniority:"Seniority", posted:"Posted", first:"First seen",
+  open:p=>`Open on ${p}`, avail:"Availability not verified", availDead:"Link reported closed on 21 Nov 2026 — verify before applying",
+  save:"Save", saved:"Saved", applied:"Mark applied", appliedOn:"Applied", hide:"Hide", hidden:"Hidden", note:"Note",
+  notePh:"Private note — stored only in this browser",
+  badgeNew:"New in this snapshot", badgeOld:"Earlier in this snapshot", deadTag:"Link dead",
+  remote:"Remote world", notStated:"See posting",
+  emptyT:"No jobs match", emptyB:"Try removing a filter or a search word — every suggestion below has real results.",
+  foot:(d,n)=>`Verified snapshot data from ${d} · ${n} listings, each checked by hand at capture time and never re-verified since. Eligibility notes summarize what the original posting stated; they are not a legal eligibility determination. Saved lists and notes stay in this browser only — nothing leaves your device. `,
+  sugKind:{Role:"Role",City:"City",Company:"Company"},
+  regions:{"Egypt":"Egypt","UAE":"UAE","Saudi Arabia":"Saudi Arabia","Other Gulf":"Other Gulf","USA":"USA","USA & Canada":"USA & Canada","Europe":"Europe","Worldwide":"Remote world","Other":"Other"}
+},
+ar:{
+  skip:"انتقل للوظائف", theme:"المظهر", lang:"اللغة", sub:SITE.sub_ar,
+  snapshot:d=>`لقطة بتاريخ \u2066${d}\u2069 · بتوقيت القاهرة. دي لقطة مؤرخة وشغل تحت التطوير: ممكن الإعلانات اتغيرت أو اتقفلت بعدها. التوفر لم يُعَد التحقق منه مقابل المصادر الحية.`,
+  searchPh:"دوّر بالمسمى أو الشركة أو المدينة…", where:"المكان", type:"نوع العمل", place:"نظام العمل", sort:"ترتيب",
+  all:"الكل", clear:"مسح الفلاتر", csv:"تصدير CSV",
+  sorts:{recent:"الأحدث نشرًا",oldest:"الأقدم نشرًا",intern:"التدريبات أولًا",comp:"الأقل منافسة"},
+  lists:{all:"كل الوظائف",saved:"المحفوظة",applied:"قُدِّم عليها",hidden:"المخفية"},
+  count:(n,t)=>`بنعرض ${n} من ${t} إعلان موثق في اللقطة`,
+  archive:n=>`${n} إعلان اتبلغ عنه كمغلق بعد اللقطة (محفوظ للسجل)`,
+  internships:n=>`${n} تدريب في اللقطة دي`,
+  workplace:"نظام العمل", jtype:"النوع", seniority:"المستوى", posted:"النشر", first:"أول رصد",
+  open:p=>`قدّم على ${p}`, avail:"التوفر غير متحقق منه", availDead:"الرابط اتبلغ عنه كمغلق في ٢١ نوفمبر ٢٠٢٦ — تأكد قبل التقديم",
+  save:"احفظ", saved:"محفوظة", applied:"علّم كمُقدَّم", appliedOn:"تم التقديم", hide:"إخفاء", hidden:"مخفية", note:"ملاحظة",
+  notePh:"ملاحظة خاصة — بتتحفظ في المتصفح ده بس",
+  badgeNew:"جديد في اللقطة", badgeOld:"سابق في اللقطة", deadTag:"رابط مغلق",
+  remote:"عن بُعد عالمي", notStated:"انظر الإعلان",
+  emptyT:"مفيش نتايج مطابقة", emptyB:"جرّب تشيل فلتر أو كلمة بحث — كل اقتراح تحته ليه نتايج حقيقية.",
+  foot:(d,n)=>`بيانات لقطة موثقة من ${d} · ${n} إعلان، كل واحد اتراجع يدويًا وقت الرصد ولم يُعَد التحقق منه من ساعتها. ملاحظات الأهلية بتلخص اللي الإعلان الأصلي ذكره، ومش حكم قانوني على الأهلية. القوائم المحفوظة والملاحظات بتفضل في المتصفح ده بس — مفيش حاجة بتسيب جهازك. `,
+  sugKind:{Role:"مسمى",City:"مدينة",Company:"شركة"},
+  regions:{"Egypt":"مصر","UAE":"الإمارات","Saudi Arabia":"السعودية","Other Gulf":"خليجي آخر","USA":"أمريكا","USA & Canada":"أمريكا وكندا","Europe":"أوروبا","Worldwide":"عن بُعد عالمي","Other":"أخرى"}
+}};
+const REGORD = ["Egypt","UAE","Saudi Arabia","Other Gulf","USA","USA & Canada","Europe","Worldwide","Other"];
+const TYPORD = ["Full-time","Part-time","Contract","Internship","Temporary","Volunteer","Apprenticeship","Not stated"];
+const PLCORD = ["Remote","Hybrid","Onsite","Not stated"];
+const LSKEY = "ci-state-" + SITE.key + "-v1";
+const LANGKEY = "ci-lang-v1";
+const THEMEKEY = "ci-theme-v2";
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const stated = (v, t) => (v && v !== "Not stated") ? v : t.notStated;
+function platformOf(url){
+  let h = ""; try { h = new URL(url).hostname.toLowerCase(); } catch(e){}
+  for (const p of ["linkedin","bayt","forasna","jobicy","arbeitnow","remotive","naukrigulf","indeed","wuzzuf"])
+    if (h.includes(p + ".")) return p === "naukrigulf" ? "NaukriGulf" : p[0].toUpperCase() + p.slice(1);
+  return "Company site";
+}
+const safeUrl = u => /^https:\/\//i.test(String(u || "")) ? u : null;
+
+/* state */
+let state = { saved:{}, applied:{}, hidden:{}, notes:{} };
+try { const s = JSON.parse(localStorage.getItem(LSKEY)); if (s && typeof s === "object") state = Object.assign(state, s); } catch(e){}
+const persist = () => { try { localStorage.setItem(LSKEY, JSON.stringify(state)); } catch(e){} };
+let lang = localStorage.getItem(LANGKEY) === "ar" ? "ar" : "en";
+let theme = localStorage.getItem(THEMEKEY);
+if (!["light","dark","graphite","navy"].includes(theme)) theme = "dark";
+let f = { q:"", region:"all", type:"all", place:"all", sort:"recent", list:"all" };
+
+function applyTheme(){
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.setProperty("--hue", SITE.hue);
+  document.querySelectorAll(".sw").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.t === theme)));
+  localStorage.setItem(THEMEKEY, theme);
+}
+function applyLang(){
+  const t = I18N[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.title = lang === "ar" ? SITE.title_ar : SITE.title_en;
+  $("h1").textContent = document.title;
+  $("brand").textContent = SITE["brand_" + lang];
+  $("skip").textContent = t.skip;
+  $("theme-lbl").textContent = t.theme;
+  $("lang-lbl").textContent = t.lang;
+  $("sub").textContent = t.sub;
+  $("snap").innerHTML = esc(t.snapshot(DATA.date));
+  $("q").placeholder = t.searchPh;
+  $("l-where").textContent = t.where; $("l-type").textContent = t.type;
+  $("l-place").textContent = t.place; $("l-sort").textContent = t.sort;
+  $("reset").textContent = t.clear; $("csv").textContent = t.csv;
+  $("foot").innerHTML = "<b>" + esc(SITE["brand_" + lang]) + "</b> — " + esc(t.foot(DATA.date, JOBS.length));
+  document.querySelectorAll("#langseg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.l === lang)));
+  localStorage.setItem(LANGKEY, lang);
+  renderBreaks(); renderFilters(); render();
+}
+
+/* filtering */
+const hay = j => [j.title, j.company, j.location, j.region, j.workplace, j.type, j.source].join(" ").toLowerCase();
+function matchQ(j, q){
+  const ws = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (!ws.length) return true;
+  const h = hay(j);
+  return ws.every(w => h.includes(w));
+}
+function visible(){
+  let v = JOBS.filter(j =>
+    matchQ(j, f.q) &&
+    (f.region === "all" || j.region === f.region) &&
+    (f.type === "all" || j.type === f.type) &&
+    (f.place === "all" || j.workplace === f.place));
+  if (f.list === "saved") v = v.filter(j => state.saved[j.id]);
+  else if (f.list === "applied") v = v.filter(j => state.applied[j.id]);
+  else if (f.list === "hidden") v = v.filter(j => state.hidden[j.id]);
+  else v = v.filter(j => !state.hidden[j.id]);
+  const byDate = (a,b) => (Date.parse(b.posted||b.first_seen)||0) - (Date.parse(a.posted||a.first_seen)||0);
+  if (f.sort === "recent") v.sort(byDate);
+  else if (f.sort === "oldest") v.sort((a,b) => -byDate(a,b));
+  else if (f.sort === "intern") v.sort((a,b) => (b.type==="Internship") - (a.type==="Internship") || byDate(a,b));
+  else if (f.sort === "comp") v.sort((a,b) => ((parseInt(a.applicants)||9999) - (parseInt(b.applicants)||9999)) || byDate(a,b));
+  return v;
+}
+
+/* filter chips */
+function chip(label, pressed, onclick, count){
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.setAttribute("aria-pressed", String(pressed));
+  b.innerHTML = esc(label) + (count != null ? ` <span class="c">${count}</span>` : "");
+  b.onclick = onclick;
+  return b;
+}
+function renderFilters(){
+  const t = I18N[lang];
+  const reg = $("f-region"); reg.innerHTML = "";
+  reg.appendChild(chip(t.all, f.region === "all", () => { f.region = "all"; renderFilters(); render(); }));
+  REGORD.filter(r => JOBS.some(j => j.region === r)).forEach(r => {
+    const n = JOBS.filter(j => j.region === r).length;
+    reg.appendChild(chip(t.regions[r] || r, f.region === r, () => { f.region = r; renderFilters(); render(); }, n));
+  });
+  const ty = $("f-type"); ty.innerHTML = "";
+  ty.appendChild(chip(t.all, f.type === "all", () => { f.type = "all"; renderFilters(); render(); }));
+  TYPORD.filter(x => JOBS.some(j => j.type === x)).forEach(x => {
+    ty.appendChild(chip(x === "Internship" ? (lang==="ar"?"تدريب":x) : x, f.type === x, () => { f.type = x; renderFilters(); render(); }));
+  });
+  const pl = $("f-place"); pl.innerHTML = "";
+  pl.appendChild(chip(t.all, f.place === "all", () => { f.place = "all"; renderFilters(); render(); }));
+  PLCORD.filter(x => JOBS.some(j => j.workplace === x)).forEach(x => {
+    const lbl = lang==="ar" ? ({Remote:"عن بُعد",Hybrid:"هجين",Onsite:"من المقر","Not stated":"غير محدد"}[x]||x) : x;
+    pl.appendChild(chip(lbl, f.place === x, () => { f.place = x; renderFilters(); render(); }));
+  });
+  const so = $("f-sort"); so.innerHTML = "";
+  for (const k of ["recent","oldest","intern","comp"])
+    so.appendChild(chip(t.sorts[k], f.sort === k, () => { f.sort = k; renderFilters(); render(); }));
+  const li = $("f-list"); li.innerHTML = "";
+  const counts = { saved:Object.keys(state.saved).length, applied:Object.keys(state.applied).length, hidden:Object.keys(state.hidden).length };
+  li.appendChild(chip(t.lists.all, f.list === "all", () => { f.list = "all"; renderFilters(); render(); }));
+  li.appendChild(chip(t.lists.saved, f.list === "saved", () => { f.list = "saved"; renderFilters(); render(); }, counts.saved || null));
+  li.appendChild(chip(t.lists.applied, f.list === "applied", () => { f.list = "applied"; renderFilters(); render(); }, counts.applied || null));
+  li.appendChild(chip(t.lists.hidden, f.list === "hidden", () => { f.list = "hidden"; renderFilters(); render(); }, counts.hidden || null));
+}
+
+/* suggestions */
+const ROLE_WORDS = SITE.roles;
+function buildSug(){
+  const out = [];
+  ROLE_WORDS.forEach(w => { const n = JOBS.filter(j => matchQ(j, w)).length; if (n) out.push({ text:w, kind:"Role", n }); });
+  const cities = new Map(), cos = new Map();
+  JOBS.forEach(j => {
+    const c = (j.location || "").split(",")[0].trim(); if (c) cities.set(c, (cities.get(c)||0)+1);
+    const co = (j.company || "").trim().replace(/\.$/, ""); if (co) cos.set(co, (cos.get(co)||0)+1);
+  });
+  [...cities.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10).forEach(([c]) => { const n = JOBS.filter(j=>matchQ(j,c)).length; if (n) out.push({ text:c, kind:"City", n }); });
+  [...cos.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,10).forEach(([c]) => { const n = JOBS.filter(j=>matchQ(j,c)).length; if (n) out.push({ text:c, kind:"Company", n }); });
+  return out;
+}
+let SUG = [];
+function renderSug(list){
+  const t = I18N[lang], s = $("sug");
+  s.innerHTML = "";
+  list.slice(0,9).forEach(x => {
+    const b = document.createElement("button");
+    b.type = "button"; b.setAttribute("role","option");
+    b.innerHTML = `<span>${esc(x.text)}</span><span class="k">${esc(t.sugKind[x.kind])}</span><span class="n">${x.n}</span>`;
+    b.onclick = () => { $("q").value = x.text; f.q = x.text; closeSug(); render(); };
+    s.appendChild(b);
+  });
+}
+function openSug(){ $("sug").classList.add("open"); $("q").setAttribute("aria-expanded","true"); }
+function closeSug(){ $("sug").classList.remove("open"); $("q").setAttribute("aria-expanded","false"); }
+
+/* cards */
+let io = null;
+function card(j, n){
+  const t = I18N[lang];
+  const el = document.createElement("article");
+  el.className = "job";
+  const isNew = j.status === "new_update";
+  const dead = j.link_status && String(j.link_status).startsWith("dead");
+  const url = safeUrl(j.url);
+  const initials = (j.company || "?").trim().replace(/\.$/,"").split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUpperCase();
+  el.innerHTML = `
+    <div class="job-top">
+      <span class="job-n">${n}</span>
+      <span class="tag">${esc(t.regions[j.region] || j.region)}</span>
+      <span class="badge ${isNew ? "new" : "old"}">${isNew ? esc(t.badgeNew) : esc(t.badgeOld)}</span>
+      ${dead ? `<span class="badge dead">${esc(t.deadTag)}</span>` : ""}
+      <span class="job-src">${esc(j.source === "Company careers" ? "Company site" : j.source)}</span>
+    </div>
+    <h3>${esc(j.title)}</h3>
+    <div class="co"><span class="av" aria-hidden="true">${esc(initials)}</span><span>${esc((j.company||"").replace(/\.$/,""))} · ${esc(j.location || "")}</span></div>
+    <div class="specs">
+      <div class="spec"><div class="k">${esc(t.workplace)}</div><div class="v">${esc(stated(j.workplace, t))}</div></div>
+      <div class="spec"><div class="k">${esc(t.jtype)}</div><div class="v">${esc(j.type === "Internship" && lang === "ar" ? "تدريب" : stated(j.type, t))}</div></div>
+      <div class="spec"><div class="k">${esc(t.seniority)}</div><div class="v">${esc(j.level || "—")}</div></div>
+    </div>
+    <div class="dates"><span>${esc(t.posted)}: <b><bdi>${esc(j.posted || "—")}</bdi></b></span><span>${esc(t.first)}: <b><bdi>${esc(j.first_seen || "—")}</bdi></b></span>${j.applicants ? `<span>${esc(lang==="ar"?"متقدم":"Applicants")}: <b>${esc(j.applicants)}</b></span>` : ""}</div>
+    ${j.note ? `<div class="note"><b>${esc(lang==="ar"?"تنبيه من الإعلان":"Check the posting")}</b>${esc(j.note)}</div>` : ""}
+    ${j.elig ? `<div class="elig"><b>${esc(lang==="ar"?"الأهلية:":"Eligibility:")}</b> ${esc(typeof j.elig === "string" ? j.elig : (j.elig[lang] || j.elig.en || ""))}</div>` : ""}
+    <div class="actions">
+      ${url ? `<a class="apply" href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow">${esc(t.open(platformOf(j.url)))} <span class="ext">↗</span></a>` : ""}
+      <span class="avail">${esc(dead ? t.availDead : t.avail)}</span>
+    </div>
+    <div class="mini">
+      <button type="button" data-a="save" class="${state.saved[j.id] ? "on" : ""}">${state.saved[j.id] ? esc(t.saved) : esc(t.save)}</button>
+      <button type="button" data-a="applied" class="${state.applied[j.id] ? "on" : ""}">${state.applied[j.id] ? esc(t.appliedOn) : esc(t.applied)}</button>
+      <button type="button" data-a="hide">${state.hidden[j.id] ? esc(t.hidden) : esc(t.hide)}</button>
+      <button type="button" data-a="note">${esc(t.note)}</button>
+    </div>
+    <div class="notes" hidden><textarea aria-label="${esc(t.note)}" placeholder="${esc(t.notePh)}">${esc(state.notes[j.id] || "")}</textarea></div>`;
+  el.querySelector('[data-a="save"]').onclick = () => { state.saved[j.id] ? delete state.saved[j.id] : state.saved[j.id] = 1; persist(); renderFilters(); render(); };
+  el.querySelector('[data-a="applied"]').onclick = () => { state.applied[j.id] ? delete state.applied[j.id] : state.applied[j.id] = 1; persist(); renderFilters(); render(); };
+  el.querySelector('[data-a="hide"]').onclick = () => { state.hidden[j.id] ? delete state.hidden[j.id] : state.hidden[j.id] = 1; persist(); renderFilters(); render(); };
+  const nw = el.querySelector(".notes");
+  el.querySelector('[data-a="note"]').onclick = () => { nw.hidden = !nw.hidden; if (!nw.hidden) nw.querySelector("textarea").focus(); };
+  nw.querySelector("textarea").oninput = e => { state.notes[j.id] = e.target.value; persist(); };
+  return el;
+}
+function render(){
+  const t = I18N[lang];
+  const v = visible();
+  const g = $("grid");
+  g.innerHTML = "";
+  if (!v.length){
+    g.innerHTML = `<div class="empty"><div class="big">🔎</div><h2>${esc(t.emptyT)}</h2><p>${esc(t.emptyB)}</p></div>`;
+  } else {
+    const frag = document.createDocumentFragment();
+    v.forEach((j, i) => frag.appendChild(card(j, i + 1)));
+    g.appendChild(frag);
+    if (io) io.disconnect();
+    io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin:"0px 0px -8% 0px", threshold:.05 });
+    g.querySelectorAll(".job").forEach((el, i) => { el.style.transitionDelay = Math.min(i * 35, 350) + "ms"; io.observe(el); });
+  }
+  const intern = JOBS.filter(j => j.type === "Internship").length;
+  $("count").innerHTML = `<b>${v.length}</b> / ${JOBS.length} · ${esc(t.internships(intern))}`;
+  const arc = $("archive");
+  if (ARCHIVED.length){
+    arc.hidden = false;
+    $("archive-sum").textContent = t.archive(ARCHIVED.length);
+    const ag = $("archive-grid");
+    if (!ag.children.length) ARCHIVED.forEach((j, i) => ag.appendChild(card(j, "A" + (i + 1))));
+  }
+}
+
+/* breakdown */
+function renderBreaks(){
+  const t = I18N[lang];
+  const b = $("breaks");
+  b.innerHTML = "";
+  const groups = [[lang==="ar"?"مصر":"Egypt", r => r === "Egypt"], [lang==="ar"?"الخليج":"Gulf", r => ["UAE","Saudi Arabia","Other Gulf"].includes(r)], [lang==="ar"?"أمريكا وأوروبا":"US & Europe", r => ["USA","USA & Canada","Europe"].includes(r)], [t.remote, r => r === "Worldwide"]];
+  groups.forEach(([lbl, fn]) => {
+    const n = JOBS.filter(j => fn(j.region)).length;
+    if (!n) return;
+    const s = document.createElement("span");
+    s.className = "bchip";
+    s.innerHTML = `<b data-n="${n}">0</b><span>${esc(lbl)}</span>`;
+    b.appendChild(s);
+  });
+  const tot = document.createElement("span");
+  tot.className = "bchip";
+  tot.innerHTML = `<b data-n="${JOBS.length}">0</b><span>${esc(lang==="ar"?"إجمالي موثق":"total verified")}</span>`;
+  b.appendChild(tot);
+}
+function animateCounts(){
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches){ document.querySelectorAll("[data-n]").forEach(e => e.textContent = e.dataset.n); return; }
+  document.querySelectorAll("[data-n]").forEach(e => {
+    const target = +e.dataset.n, t0 = performance.now();
+    const step = now => { const p = Math.min((now - t0) / 750, 1); e.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+}
+
+/* csv */
+function csv(){
+  const v = visible();
+  const rows = [["title","company","location","region","workplace","type","posted","first_seen","source","url","availability"]];
+  v.forEach(j => rows.push([j.title,(j.company||"").replace(/\.$/,""),j.location,j.region,j.workplace,j.type,j.posted||"",j.first_seen||"",j.source,j.url, j.link_status ? "reported closed 2026-11-21" : "not verified"]));
+  const text = rows.map(r => r.map(x => `"${String(x ?? "").replace(/"/g,'""')}"`).join(",")).join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob(["﻿" + text], { type:"text/csv;charset=utf-8" }));
+  a.download = SITE.key + "-jobs-" + DATA.date + ".csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+/* wiring */
+function init(){
+  const sw = $("swatches");
+  [["light","Light"],["dark","Dark"],["graphite","Graphite"],["navy","Navy"]].forEach(([k, lbl]) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "sw"; b.dataset.t = k; b.title = lbl; b.setAttribute("aria-label", lbl + " theme");
+    b.onclick = () => { theme = k; applyTheme(); };
+    sw.appendChild(b);
+  });
+  document.querySelectorAll("#langseg button").forEach(b => b.onclick = () => { lang = b.dataset.l; applyLang(); });
+  $("reset").onclick = () => { f = { q:"", region:"all", type:"all", place:"all", sort:"recent", list:"all" }; $("q").value = ""; renderFilters(); render(); };
+  $("csv").onclick = csv;
+  const q = $("q");
+  q.addEventListener("input", () => {
+    f.q = q.value;
+    const v = q.value.trim().toLowerCase();
+    renderSug(v ? SUG.filter(x => x.text.toLowerCase().includes(v)) : SUG);
+    openSug();
+    render();
+  });
+  q.addEventListener("focus", () => { renderSug(q.value.trim() ? SUG.filter(x => x.text.toLowerCase().includes(q.value.trim().toLowerCase())) : SUG); if ($("sug").children.length) openSug(); });
+  q.addEventListener("keydown", e => { if (e.key === "Escape") closeSug(); });
+  document.addEventListener("click", e => { if (!e.target.closest(".search-zone")) closeSug(); });
+  SUG = buildSug();
+  applyTheme(); renderBreaks(); applyLang(); animateCounts();
+  const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); ro.unobserve(e.target); } }), { threshold:.05 });
+  document.querySelectorAll(".reveal").forEach(el => ro.observe(el));
+}
+init();
+</script>
+</body>
+</html>
