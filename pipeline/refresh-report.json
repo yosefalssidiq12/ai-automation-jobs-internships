@@ -1,6 +1,6 @@
 {
  "site": "ai",
- "run_at": "2026-11-22T01:33:34.677709+00:00",
+ "run_at": "2026-11-22T02:22:11.720092+00:00",
  "dry_run": false,
  "fresh_verified": {
   "jobicy_status_endpoint": 13,
@@ -38,11 +38,17 @@
  "errors": [],
  "counts": {
   "publishable": 26,
-  "prev": 15,
+  "prev": 26,
   "fresh": 22,
   "carried": 4,
   "archived": 0,
   "excluded": 5
+ },
+ "fresh_verified_by_source": {
+  "arbeitnow": {
+   "eligible": 158,
+   "fresh_success": 21
+  }
  },
  "publication_gate": {
   "passed": true,
@@ -59,8 +65,8 @@
   },
   "source_counts": {
    "jobicy": 356,
-   "arbeitnow": 867
+   "arbeitnow": 868
   }
  },
- "build_sha256_16": "f6c1983fce05c4d3"
+ "build_sha256_16": "b8aadbb9875157f5"
 }
