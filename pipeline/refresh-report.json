@@ -1,12 +1,14 @@
 {
  "site": "ai",
- "run_at": "2026-11-22T03:27:47.146092+00:00",
+ "run_at": "2026-11-22T05:39:04.077586+00:00",
  "dry_run": false,
  "fresh_verified": {
   "jobicy_status_endpoint": 13,
-  "bounded_content_check": 9
+  "bounded_content_check": 12
  },
  "carried": [
+  "go-to-market-ai-data-intern-ai-x-greentech-m-f-d-reonic-go-to-market-ai-data-intern-ai-x-g",
+  "forward-deployed-ai-engineer-m-f-d-multi-agent-systems-advan-forward-deployed-ai-engineer-",
   "principal-ai-engineer-x-f-m-doctolib-principal-ai-engineer-berlin-439680",
   "go-to-market-champion-gpu-ai-impossiblecloud-go-to-market-champion-gpu-ai-hamburg-447533",
   "ai-r-d-engineer-model-training-f-m-d-alephalpha-ai-rd-engineer-model-training-heidelberg-1",
@@ -23,7 +25,7 @@
    "reason": "relevance_duties_unconfirmed"
   },
   {
-   "id": "founders-associate-finance-ai-x-greentech-m-f-d-reonic-founders-associate-finance-ai-x-gre",
+   "id": "stage-2027-ia-ml-engineer-50-r-d-50-produit-statistiques-bay-stage-2027-ia-ml-engineer-50-",
    "reason": "relevance_duties_unconfirmed"
   },
   {
@@ -37,17 +39,17 @@
  ],
  "errors": [],
  "counts": {
-  "publishable": 26,
+  "publishable": 31,
   "prev": 26,
-  "fresh": 22,
-  "carried": 4,
+  "fresh": 25,
+  "carried": 6,
   "archived": 0,
   "excluded": 5
  },
  "fresh_verified_by_source": {
   "arbeitnow": {
-   "eligible": 156,
-   "fresh_success": 21
+   "eligible": 162,
+   "fresh_success": 24
   }
  },
  "publication_gate": {
@@ -64,9 +66,9 @@
    ]
   },
   "source_counts": {
-   "jobicy": 356,
-   "arbeitnow": 840
+   "jobicy": 351,
+   "arbeitnow": 859
   }
  },
- "build_sha256_16": "b1388c0a4d0225ee"
+ "build_sha256_16": "b0955179e366663f"
 }
