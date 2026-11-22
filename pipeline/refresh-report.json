@@ -1,10 +1,10 @@
 {
  "site": "ai",
- "run_at": "2026-11-22T05:39:04.077586+00:00",
+ "run_at": "2026-11-22T06:58:53.647881+00:00",
  "dry_run": false,
  "fresh_verified": {
-  "jobicy_status_endpoint": 13,
-  "bounded_content_check": 12
+  "jobicy_status_endpoint": 14,
+  "bounded_content_check": 10
  },
  "carried": [
   "go-to-market-ai-data-intern-ai-x-greentech-m-f-d-reonic-go-to-market-ai-data-intern-ai-x-g",
@@ -14,8 +14,21 @@
   "ai-r-d-engineer-model-training-f-m-d-alephalpha-ai-rd-engineer-model-training-heidelberg-1",
   "senior-ai-r-d-engineer-model-training-f-m-d-alephalpha-senior-ai-rd-engineer-model-trainin"
  ],
- "archived": [],
+ "archived": [
+  {
+   "id": "cdi-senior-ai-engineer-paris-artefactjobs-cdi-senior-ai-engineer-paris-9th-arrondissement-",
+   "reason": "dedup duplicate of https://www.arbeitnow.fr/jobs/companies/artefactlinkedin/cdi-senior-ai-engineer-paris-9th-arrondissement-of-paris-75009-paris-45413 (alias_posting_equivalence)"
+  },
+  {
+   "id": "cdi-ai-engineer-manager-paris-artefactjobs-cdi-ai-engineer-manager-paris-9th-arrondissemen",
+   "reason": "dedup duplicate of https://www.arbeitnow.fr/jobs/companies/artefactlinkedin/cdi-ai-engineer-manager-paris-9th-arrondissement-of-paris-75009-paris-427444 (alias_posting_equivalence)"
+  }
+ ],
  "excluded": [
+  {
+   "id": "senior-sales-engineer-data-ai-security-veeam-software-156317",
+   "reason": "relevance_duties_unconfirmed"
+  },
   {
    "id": "ai-solutions-engineer-all-genders-skdse-ai-solutions-engineer-all-genders-berlin-300151",
    "reason": "relevance_duties_unconfirmed"
@@ -39,16 +52,16 @@
  ],
  "errors": [],
  "counts": {
-  "publishable": 31,
-  "prev": 26,
-  "fresh": 25,
+  "publishable": 30,
+  "prev": 31,
+  "fresh": 24,
   "carried": 6,
-  "archived": 0,
-  "excluded": 5
+  "archived": 2,
+  "excluded": 6
  },
  "fresh_verified_by_source": {
   "arbeitnow": {
-   "eligible": 162,
+   "eligible": 160,
    "fresh_success": 24
   }
  },
@@ -66,9 +79,9 @@
    ]
   },
   "source_counts": {
-   "jobicy": 351,
-   "arbeitnow": 859
+   "jobicy": 360,
+   "arbeitnow": 858
   }
  },
- "build_sha256_16": "b0955179e366663f"
+ "build_sha256_16": "851d4fe3657fdd1b"
 }
