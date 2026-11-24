@@ -1,26 +1,55 @@
 {
  "site": "ai",
- "run_at": "2026-11-23T20:20:53.877823+00:00",
+ "run_at": "2026-11-24T06:37:36.926468+00:00",
  "dry_run": false,
  "fresh_verified": {
   "jobicy_status_endpoint": 13,
   "bounded_content_check": 5
  },
- "carried": [
-  "senior-applied-ai-manager-f-h-illuin-technology-senior-applied-ai-manager-f-h-puteaux-4743",
-  "devops-engineer-ai-assisted-f-r-eine-globale-publishing-plat-devops-engineer-ai-assisted-f",
-  "java-entwickler-product-engineer-du-gestaltest-ai-assisted-s-java-entwickler-product-engin",
-  "backend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-backend-developer-vision-ai-platf",
-  "frontend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-frontend-developer-vision-ai-pla",
-  "devops-engineer-m-w-d-cloud-ai-infrastructure-denkweit-gmbh-devops-engineer-cloud-ai-infra",
-  "ai-entwickler-denkweit-gmbh-ai-entwickler-halle-saale-313429"
- ],
- "archived": [],
- "excluded": [
+ "carried": [],
+ "archived": [
   {
-   "id": "senior-sales-engineer-data-ai-security-veeam-software-156317",
-   "reason": "relevance_duties_unconfirmed"
+   "id": "ai-application-engineer-ai-products-llm-rag-m-f-d-machine-le-ai-application-engineer-ai-pr",
+   "reason": "carried verification older than 0d"
   },
+  {
+   "id": "junior-ai-application-engineer-ai-products-llm-rag-m-f-d-mac-junior-ai-application-enginee",
+   "reason": "carried verification older than 0d"
+  },
+  {
+   "id": "genai-engineer-m-w-d-machine-learning-reply-genai-engineer-munich-152776",
+   "reason": "carried verification older than 0d"
+  },
+  {
+   "id": "senior-applied-ai-manager-f-h-illuin-technology-senior-applied-ai-manager-f-h-puteaux-4743",
+   "reason": "carried verification older than 0d"
+  },
+  {
+   "id": "java-entwickler-product-engineer-du-gestaltest-ai-assisted-s-java-entwickler-product-engin",
+   "reason": "absent from fresh fetch and verification stale"
+  },
+  {
+   "id": "frontend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-frontend-developer-vision-ai-pla",
+   "reason": "absent from fresh fetch and verification stale"
+  },
+  {
+   "id": "devops-engineer-m-w-d-cloud-ai-infrastructure-denkweit-gmbh-devops-engineer-cloud-ai-infra",
+   "reason": "absent from fresh fetch and verification stale"
+  },
+  {
+   "id": "devops-engineer-ai-assisted-f-r-eine-globale-publishing-plat-devops-engineer-ai-assisted-f",
+   "reason": "absent from fresh fetch and verification stale"
+  },
+  {
+   "id": "backend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-backend-developer-vision-ai-platf",
+   "reason": "absent from fresh fetch and verification stale"
+  },
+  {
+   "id": "ai-entwickler-denkweit-gmbh-ai-entwickler-halle-saale-313429",
+   "reason": "absent from fresh fetch and verification stale"
+  }
+ ],
+ "excluded": [
   {
    "id": "product-engineer-ai-stockbroking-bjak-163966",
    "reason": "relevance_duties_unconfirmed"
@@ -40,22 +69,30 @@
   {
    "id": "senior-data-engineer-ads-data-ai-native-life360-163771",
    "reason": "relevance_duties_unconfirmed"
+  },
+  {
+   "id": "senior-machine-learning-engineer-medical-imaging-snke-senior-machine-learning-engineer-med",
+   "reason": "relevance_duties_unconfirmed"
+  },
+  {
+   "id": "ai-client-executive-supermodular-ai-ai-client-executive-munich-381839",
+   "reason": "relevance_duties_unconfirmed"
   }
  ],
  "errors": [],
  "prev_jobicy_status_checked": 3,
  "counts": {
-  "publishable": 25,
-  "prev": 20,
+  "publishable": 18,
+  "prev": 25,
   "fresh": 18,
-  "carried": 7,
-  "archived": 0,
-  "excluded": 6
+  "carried": 0,
+  "archived": 10,
+  "excluded": 7
  },
  "fresh_verified_by_source": {
   "arbeitnow": {
-   "eligible": 155,
-   "fresh_success": 17
+   "eligible": 157,
+   "fresh_success": 25
   }
  },
  "publication_gate": {
@@ -72,9 +109,9 @@
    ]
   },
   "source_counts": {
-   "jobicy": 356,
-   "arbeitnow": 881
+   "jobicy": 353,
+   "arbeitnow": 877
   }
  },
- "build_sha256_16": "4677666123a9e4da"
+ "build_sha256_16": "8f4c5c962bc7ae55"
 }
