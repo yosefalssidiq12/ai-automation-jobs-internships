@@ -1,85 +1,53 @@
 {
  "site": "ai",
- "run_at": "2026-11-23T03:09:01.757467+00:00",
+ "run_at": "2026-11-24T03:04:03.791620+00:00",
  "dry_run": false,
  "fresh_verified": {
   "jobicy_status_endpoint": 13,
-  "bounded_content_check": 7
+  "bounded_content_check": 5
  },
  "carried": [],
  "archived": [
   {
-   "id": "cdi-senior-ai-engineer-paris-artefact-cdi-senior-ai-engineer-paris-9th-arrondissement-of-p",
+   "id": "senior-applied-ai-manager-f-h-illuin-technology-senior-applied-ai-manager-f-h-puteaux-4743",
    "reason": "carried verification older than 0d"
   },
   {
-   "id": "cdi-ai-engineer-manager-paris-artefact-cdi-ai-engineer-manager-paris-9th-arrondissement-of",
+   "id": "devops-engineer-ai-assisted-f-r-eine-globale-publishing-plat-devops-engineer-ai-assisted-f",
    "reason": "carried verification older than 0d"
   },
   {
-   "id": "founding-engineer-mo-team-ai-health-companion-alan-founding-engineer-mo-team-ai-health-com",
+   "id": "java-entwickler-product-engineer-du-gestaltest-ai-assisted-s-java-entwickler-product-engin",
    "reason": "carried verification older than 0d"
   },
   {
-   "id": "senior-ai-platform-engineer-data-factory-f-m-d-decathlontech-senior-ai-platform-engineer-d",
+   "id": "backend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-backend-developer-vision-ai-platf",
    "reason": "carried verification older than 0d"
   },
   {
-   "id": "senior-lead-ai-deployment-engineer-supply-chain-celonis-senior-lead-ai-deployment-engineer",
+   "id": "frontend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-frontend-developer-vision-ai-pla",
    "reason": "carried verification older than 0d"
   },
   {
-   "id": "venture-development-ai-process-automation-w-m-d-enpal-venture-development-ai-process-autom",
-   "reason": "absent from fresh fetch and verification stale"
+   "id": "devops-engineer-m-w-d-cloud-ai-infrastructure-denkweit-gmbh-devops-engineer-cloud-ai-infra",
+   "reason": "carried verification older than 0d"
   },
   {
-   "id": "staff-product-engineer-ai-intercom-staff-product-engineer-ai-berlin-488644",
+   "id": "ai-entwickler-denkweit-gmbh-ai-entwickler-halle-saale-313429",
    "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "senior-applied-ai-engineer-all-genders-wemolo-senior-applied-ai-engineer-all-genders-munch",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "senior-ai-r-d-engineer-model-training-f-m-d-alephalpha-senior-ai-rd-engineer-model-trainin",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "principal-ai-engineer-x-f-m-doctolib-principal-ai-engineer-berlin-439680",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "marketing-automation-ai-manager-m-w-d-b2b-marketing-caronsal-marketing-automation-ai-manag",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "go-to-market-champion-gpu-ai-impossiblecloud-go-to-market-champion-gpu-ai-hamburg-447533",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "go-to-market-ai-data-intern-ai-x-greentech-m-f-d-reonic-go-to-market-ai-data-intern-ai-x-g",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "forward-deployed-ai-engineer-m-f-d-multi-agent-systems-advan-forward-deployed-ai-engineer-",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "applied-ai-engineer-all-genders-wemolo-applied-ai-engineer-all-genders-munchen-243027",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "ai-r-d-engineer-model-training-f-m-d-alephalpha-ai-rd-engineer-model-training-heidelberg-1",
-   "reason": "absent from fresh fetch and verification stale"
-  },
-  {
-   "id": "machine-learning-engineer-reddit-163552",
-   "reason": "jobicy status endpoint: closed"
   }
  ],
  "excluded": [
   {
-   "id": "senior-sales-engineer-data-ai-security-veeam-software-156317",
+   "id": "product-engineer-ai-stockbroking-bjak-163966",
+   "reason": "relevance_duties_unconfirmed"
+  },
+  {
+   "id": "product-engineer-ai-neobank-bjak-163961",
+   "reason": "relevance_duties_unconfirmed"
+  },
+  {
+   "id": "product-engineer-ai-investing-bjak-163958",
    "reason": "relevance_duties_unconfirmed"
   },
   {
@@ -91,24 +59,24 @@
    "reason": "relevance_duties_unconfirmed"
   },
   {
-   "id": "release-train-engineer-senior-cloud-ai-services-freelance-im-release-train-engineer-senior",
+   "id": "ai-client-executive-supermodular-ai-ai-client-executive-munich-381839",
    "reason": "relevance_duties_unconfirmed"
   }
  ],
  "errors": [],
- "prev_jobicy_status_checked": 1,
+ "prev_jobicy_status_checked": 3,
  "counts": {
-  "publishable": 20,
-  "prev": 30,
-  "fresh": 20,
+  "publishable": 18,
+  "prev": 20,
+  "fresh": 18,
   "carried": 0,
-  "archived": 17,
-  "excluded": 4
+  "archived": 7,
+  "excluded": 6
  },
  "fresh_verified_by_source": {
   "arbeitnow": {
-   "eligible": 132,
-   "fresh_success": 24
+   "eligible": 153,
+   "fresh_success": 17
   }
  },
  "publication_gate": {
@@ -126,8 +94,8 @@
   },
   "source_counts": {
    "jobicy": 356,
-   "arbeitnow": 881
+   "arbeitnow": 874
   }
  },
- "build_sha256_16": "2969cc8015107ee2"
+ "build_sha256_16": null
 }
