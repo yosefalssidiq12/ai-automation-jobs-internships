@@ -1,42 +1,16 @@
 {
   "site": "ai",
-  "run_at": "2026-11-24T10:09:30.182731+00:00",
+  "run_at": "2026-11-24T10:16:39.066530+00:00",
   "dry_run": false,
   "fresh_verified": {
     "jobicy_status_endpoint": 14,
     "bounded_content_check": 2
   },
-  "carried": [],
-  "archived": [
-    {
-      "id": "senior-applied-ai-manager-f-h-illuin-technology-senior-applied-ai-manager-f-h-puteaux-4743",
-      "reason": "carried verification older than 0d"
-    },
-    {
-      "id": "java-entwickler-product-engineer-du-gestaltest-ai-assisted-s-java-entwickler-product-engin",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "frontend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-frontend-developer-vision-ai-pla",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "devops-engineer-m-w-d-cloud-ai-infrastructure-denkweit-gmbh-devops-engineer-cloud-ai-infra",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "devops-engineer-ai-assisted-f-r-eine-globale-publishing-plat-devops-engineer-ai-assisted-f",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "backend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-backend-developer-vision-ai-platf",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "ai-entwickler-denkweit-gmbh-ai-entwickler-halle-saale-313429",
-      "reason": "absent from fresh fetch and verification stale"
-    }
+  "carried": [
+    "general-accountant-digisay-37b2dd9f",
+    "digital-marketing-specialist-supercommerce-b099237b"
   ],
+  "archived": [],
   "excluded": [
     {
       "id": "product-engineer-ai-stockbroking-bjak-163966",
@@ -75,10 +49,10 @@
   "prev_jobicy_status_checked": 3,
   "counts": {
     "publishable": 18,
-    "prev": 20,
+    "prev": 18,
     "fresh": 16,
-    "carried": 0,
-    "archived": 7,
+    "carried": 2,
+    "archived": 0,
     "excluded": 8
   },
   "fresh_verified_by_source": {
@@ -107,15 +81,14 @@
   },
   "build_sha256_16": null,
   "jooble": {
-    "status": "ok",
-    "reason": null,
-    "requests": 0,
-    "unique": 2,
-    "eligible": 2,
-    "promoted": 2,
-    "folded": 2,
+    "status": "skipped",
+    "reason": "fixture mode zero without store",
+    "requests": null,
+    "unique": null,
+    "eligible": null,
+    "promoted": 0,
+    "folded": 0,
     "dropped": 0,
-    "unchecked": 0,
-    "reverified": 0
+    "unchecked": 0
   }
 }
