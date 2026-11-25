@@ -1,101 +1,109 @@
 {
- "site": "ai",
- "run_at": "2026-11-24T03:04:03.791620+00:00",
- "dry_run": false,
- "fresh_verified": {
-  "jobicy_status_endpoint": 13,
-  "bounded_content_check": 5
- },
- "carried": [],
- "archived": [
-  {
-   "id": "senior-applied-ai-manager-f-h-illuin-technology-senior-applied-ai-manager-f-h-puteaux-4743",
-   "reason": "carried verification older than 0d"
+  "site": "ai",
+  "run_at": "2026-11-25T03:12:11.903510+00:00",
+  "dry_run": false,
+  "fresh_verified": {
+    "jobicy_status_endpoint": 15,
+    "bounded_content_check": 9
   },
-  {
-   "id": "devops-engineer-ai-assisted-f-r-eine-globale-publishing-plat-devops-engineer-ai-assisted-f",
-   "reason": "carried verification older than 0d"
+  "carried": [],
+  "archived": [
+    {
+      "id": "stage-ai-engineer-ia-alternatives-decathlontechnology-stage-ai-engineer-ia-alternatives-pa",
+      "reason": "carried verification older than 0d"
+    },
+    {
+      "id": "lead-ai-governance-f-m-d-decathlontechnology-lead-ai-governance-paris-paris-villeneuve-das",
+      "reason": "carried verification older than 0d"
+    },
+    {
+      "id": "junior-ai-application-engineer-ai-products-llm-rag-m-f-d-mac-junior-ai-application-enginee",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "genai-engineer-m-w-d-machine-learning-reply-genai-engineer-munich-152776",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "ai-application-engineer-ai-products-llm-rag-m-f-d-machine-le-ai-application-engineer-ai-pr",
+      "reason": "absent from fresh fetch and verification stale"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "product-engineer-ai-stockbroking-bjak-163966",
+      "reason": "relevance_duties_unconfirmed"
+    },
+    {
+      "id": "product-engineer-ai-neobank-bjak-163961",
+      "reason": "relevance_duties_unconfirmed"
+    },
+    {
+      "id": "product-engineer-ai-investing-bjak-163958",
+      "reason": "relevance_duties_unconfirmed"
+    },
+    {
+      "id": "product-engineer-ai-finance-bjak-163871",
+      "reason": "relevance_duties_unconfirmed"
+    },
+    {
+      "id": "senior-data-engineer-ads-data-ai-native-life360-163771",
+      "reason": "relevance_duties_unconfirmed"
+    },
+    {
+      "id": "senior-machine-learning-engineer-feedforward-3d-4d-reconstru-senior-machine-learning-engin",
+      "reason": "relevance_duties_unconfirmed"
+    },
+    {
+      "id": "working-student-legal-ai-infrastructure-lyceum-working-student-legal-ai-infrastructure-ber",
+      "reason": "relevance_duties_unconfirmed"
+    }
+  ],
+  "errors": [],
+  "prev_jobicy_status_checked": 7,
+  "counts": {
+    "publishable": 25,
+    "prev": 18,
+    "fresh": 24,
+    "carried": 0,
+    "archived": 5,
+    "excluded": 7
   },
-  {
-   "id": "java-entwickler-product-engineer-du-gestaltest-ai-assisted-s-java-entwickler-product-engin",
-   "reason": "carried verification older than 0d"
+  "fresh_verified_by_source": {
+    "arbeitnow": {
+      "eligible": 158,
+      "fresh_success": 19
+    }
   },
-  {
-   "id": "backend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-backend-developer-vision-ai-platf",
-   "reason": "carried verification older than 0d"
+  "publication_gate": {
+    "passed": true,
+    "breaches": [],
+    "rules": {
+      "min_absolute": 5,
+      "min_ratio_vs_prev": 0.5,
+      "require_collection_nonempty": true,
+      "require_fresh_verification": true,
+      "expected_sources_nonempty": [
+        "jobicy",
+        "arbeitnow"
+      ]
+    },
+    "source_counts": {
+      "jobicy": 354,
+      "arbeitnow": 880
+    }
   },
-  {
-   "id": "frontend-developer-m-w-d-vision-ai-platform-denkweit-gmbh-frontend-developer-vision-ai-pla",
-   "reason": "carried verification older than 0d"
-  },
-  {
-   "id": "devops-engineer-m-w-d-cloud-ai-infrastructure-denkweit-gmbh-devops-engineer-cloud-ai-infra",
-   "reason": "carried verification older than 0d"
-  },
-  {
-   "id": "ai-entwickler-denkweit-gmbh-ai-entwickler-halle-saale-313429",
-   "reason": "absent from fresh fetch and verification stale"
+  "build_sha256_16": null,
+  "jooble": {
+    "status": "ok",
+    "reason": null,
+    "requests": null,
+    "unique": null,
+    "eligible": 12,
+    "promoted": 1,
+    "folded": 1,
+    "dropped": 0,
+    "unchecked": 0,
+    "reverified": 0
   }
- ],
- "excluded": [
-  {
-   "id": "product-engineer-ai-stockbroking-bjak-163966",
-   "reason": "relevance_duties_unconfirmed"
-  },
-  {
-   "id": "product-engineer-ai-neobank-bjak-163961",
-   "reason": "relevance_duties_unconfirmed"
-  },
-  {
-   "id": "product-engineer-ai-investing-bjak-163958",
-   "reason": "relevance_duties_unconfirmed"
-  },
-  {
-   "id": "product-engineer-ai-finance-bjak-163871",
-   "reason": "relevance_duties_unconfirmed"
-  },
-  {
-   "id": "senior-data-engineer-ads-data-ai-native-life360-163771",
-   "reason": "relevance_duties_unconfirmed"
-  },
-  {
-   "id": "ai-client-executive-supermodular-ai-ai-client-executive-munich-381839",
-   "reason": "relevance_duties_unconfirmed"
-  }
- ],
- "errors": [],
- "prev_jobicy_status_checked": 3,
- "counts": {
-  "publishable": 18,
-  "prev": 20,
-  "fresh": 18,
-  "carried": 0,
-  "archived": 7,
-  "excluded": 6
- },
- "fresh_verified_by_source": {
-  "arbeitnow": {
-   "eligible": 153,
-   "fresh_success": 17
-  }
- },
- "publication_gate": {
-  "passed": true,
-  "breaches": [],
-  "rules": {
-   "min_absolute": 5,
-   "min_ratio_vs_prev": 0.5,
-   "require_collection_nonempty": true,
-   "require_fresh_verification": true,
-   "expected_sources_nonempty": [
-    "jobicy",
-    "arbeitnow"
-   ]
-  },
-  "source_counts": {
-   "jobicy": 356,
-   "arbeitnow": 874
-  }
- },
- "build_sha256_16": null
 }
