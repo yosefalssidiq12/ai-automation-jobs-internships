@@ -1,31 +1,51 @@
 {
   "site": "ai",
-  "run_at": "2026-11-25T03:12:11.903510+00:00",
+  "run_at": "2026-11-26T03:10:11.205966+00:00",
   "dry_run": false,
   "fresh_verified": {
-    "jobicy_status_endpoint": 15,
-    "bounded_content_check": 9
+    "jobicy_status_endpoint": 22,
+    "bounded_content_check": 8
   },
   "carried": [],
   "archived": [
     {
-      "id": "stage-ai-engineer-ia-alternatives-decathlontechnology-stage-ai-engineer-ia-alternatives-pa",
-      "reason": "carried verification older than 0d"
-    },
-    {
-      "id": "lead-ai-governance-f-m-d-decathlontechnology-lead-ai-governance-paris-paris-villeneuve-das",
-      "reason": "carried verification older than 0d"
-    },
-    {
-      "id": "junior-ai-application-engineer-ai-products-llm-rag-m-f-d-mac-junior-ai-application-enginee",
+      "id": "senior-data-applied-ai-engineer-almentor-1d6448c1",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "genai-engineer-m-w-d-machine-learning-reply-genai-engineer-munich-152776",
+      "id": "product-engineer-full-stack-ai-x-greentech-m-d-f-reonic-product-engineer-full-stack-ai-x-g",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "ai-application-engineer-ai-products-llm-rag-m-f-d-machine-le-ai-application-engineer-ai-pr",
+      "id": "site-reliability-engineer-ai-assisted-platform-opcp-m-f-d-gr-site-reliability-engineer-ai-",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "senior-applied-ai-engineer-m-w-d-acture-germany-senior-applied-ai-engineer-berlin-43497",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "marketing-go-to-market-manager-m-w-d-agentic-marketing-coduc-marketing-go-to-market-manage",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "marketing-go-to-market-manager-m-w-d-agentic-marketing-ainav-marketing-go-to-market-manage",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "business-ai-architect-m-w-d-gambit-business-ai-architect-deutschland-35052",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "architecture-intern-ai-building-design-comstruct-ict-architecture-intern-ai-building-desig",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "ai-engineering-intern-sanovio-ai-engineering-intern-munich-228220",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "ai-data-platform-engineer-gcp-all-levels-knowway-gmbh-ai-data-platform-engineer-gcp-all-le",
       "reason": "absent from fresh fetch and verification stale"
     }
   ],
@@ -51,28 +71,24 @@
       "reason": "relevance_duties_unconfirmed"
     },
     {
-      "id": "senior-machine-learning-engineer-feedforward-3d-4d-reconstru-senior-machine-learning-engin",
-      "reason": "relevance_duties_unconfirmed"
-    },
-    {
-      "id": "working-student-legal-ai-infrastructure-lyceum-working-student-legal-ai-infrastructure-ber",
+      "id": "organic-growth-manager-seo-ai-search-cosuno-organic-growth-manager-seo-ai-search-berlin-10",
       "reason": "relevance_duties_unconfirmed"
     }
   ],
   "errors": [],
-  "prev_jobicy_status_checked": 7,
+  "prev_jobicy_status_checked": 11,
   "counts": {
-    "publishable": 25,
-    "prev": 18,
-    "fresh": 24,
+    "publishable": 31,
+    "prev": 25,
+    "fresh": 30,
     "carried": 0,
-    "archived": 5,
-    "excluded": 7
+    "archived": 10,
+    "excluded": 6
   },
   "fresh_verified_by_source": {
     "arbeitnow": {
-      "eligible": 158,
-      "fresh_success": 19
+      "eligible": 176,
+      "fresh_success": 25
     }
   },
   "publication_gate": {
@@ -90,7 +106,7 @@
     },
     "source_counts": {
       "jobicy": 354,
-      "arbeitnow": 880
+      "arbeitnow": 859
     }
   },
   "build_sha256_16": null,
@@ -99,7 +115,7 @@
     "reason": null,
     "requests": null,
     "unique": null,
-    "eligible": 12,
+    "eligible": 31,
     "promoted": 1,
     "folded": 1,
     "dropped": 0,
