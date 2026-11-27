@@ -1,52 +1,56 @@
 {
   "site": "ai",
-  "run_at": "2026-11-26T03:10:11.205966+00:00",
+  "run_at": "2026-11-27T03:12:46.062639+00:00",
   "dry_run": false,
   "fresh_verified": {
-    "jobicy_status_endpoint": 22,
-    "bounded_content_check": 8
+    "jobicy_status_endpoint": 23,
+    "bounded_content_check": 4
   },
   "carried": [],
   "archived": [
+    {
+      "id": "strategy-ops-lead-applied-ai-clipboard-strategy-ops-lead-applied-ai-berlin-333117",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "senior-leadership-ai-enablement-consultant-w-d-m-webuildai-g-senior-leadership-ai-enableme",
+      "reason": "absent from fresh fetch and verification stale"
+    },
     {
       "id": "senior-data-applied-ai-engineer-almentor-1d6448c1",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "product-engineer-full-stack-ai-x-greentech-m-d-f-reonic-product-engineer-full-stack-ai-x-g",
+      "id": "senior-consultant-ai-enablement-m-w-d-junto-education-gmbh-senior-consultant-ai-enablement",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "site-reliability-engineer-ai-assisted-platform-opcp-m-f-d-gr-site-reliability-engineer-ai-",
+      "id": "senior-ai-developer-m-w-d-hubside-die-recruitingwerkstatt-senior-ai-developer-munich-43188",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "senior-applied-ai-engineer-m-w-d-acture-germany-senior-applied-ai-engineer-berlin-43497",
+      "id": "data-ai-engineer-m-w-d-collaboration-betters-the-world-gmbh-data-ai-engineer-munich-99309",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "marketing-go-to-market-manager-m-w-d-agentic-marketing-coduc-marketing-go-to-market-manage",
+      "id": "data-ai-engineer-frankfurt-or-munich-germany-unit8-data-ai-engineer-frankfurt-or-munich-ge",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "marketing-go-to-market-manager-m-w-d-agentic-marketing-ainav-marketing-go-to-market-manage",
+      "id": "applied-ai-architect-large-enterprise-openai-applied-ai-architect-large-enterprise-paris-4",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "business-ai-architect-m-w-d-gambit-business-ai-architect-deutschland-35052",
+      "id": "ai-engineer-m-w-d-collaboration-betters-the-world-gmbh-ai-engineer-munich-229989",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "architecture-intern-ai-building-design-comstruct-ict-architecture-intern-ai-building-desig",
-      "reason": "absent from fresh fetch and verification stale"
+      "id": "director-of-ai-ml-bayesian-health-153513",
+      "reason": "jobicy status endpoint: closed"
     },
     {
-      "id": "ai-engineering-intern-sanovio-ai-engineering-intern-munich-228220",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "ai-data-platform-engineer-gcp-all-levels-knowway-gmbh-ai-data-platform-engineer-gcp-all-le",
-      "reason": "absent from fresh fetch and verification stale"
+      "id": "applied-ai-ml-engineer-oddball-153362",
+      "reason": "jobicy status endpoint: closed"
     }
   ],
   "excluded": [
@@ -71,24 +75,28 @@
       "reason": "relevance_duties_unconfirmed"
     },
     {
-      "id": "organic-growth-manager-seo-ai-search-cosuno-organic-growth-manager-seo-ai-search-berlin-10",
+      "id": "senior-google-ads-manager-ai-first-performance-marketing-m-w-senior-google-ads-manager-ai-",
+      "reason": "relevance_duties_unconfirmed"
+    },
+    {
+      "id": "marketing-manager-google-ads-ai-first-performance-marketing--marketing-manager-google-ads-",
       "reason": "relevance_duties_unconfirmed"
     }
   ],
   "errors": [],
-  "prev_jobicy_status_checked": 11,
+  "prev_jobicy_status_checked": 13,
   "counts": {
-    "publishable": 31,
-    "prev": 25,
-    "fresh": 30,
+    "publishable": 28,
+    "prev": 31,
+    "fresh": 27,
     "carried": 0,
-    "archived": 10,
-    "excluded": 6
+    "archived": 11,
+    "excluded": 7
   },
   "fresh_verified_by_source": {
     "arbeitnow": {
-      "eligible": 176,
-      "fresh_success": 25
+      "eligible": 143,
+      "fresh_success": 24
     }
   },
   "publication_gate": {
@@ -105,8 +113,8 @@
       ]
     },
     "source_counts": {
-      "jobicy": 354,
-      "arbeitnow": 859
+      "jobicy": 369,
+      "arbeitnow": 844
     }
   },
   "build_sha256_16": null,
@@ -115,7 +123,7 @@
     "reason": null,
     "requests": null,
     "unique": null,
-    "eligible": 31,
+    "eligible": 34,
     "promoted": 1,
     "folded": 1,
     "dropped": 0,
