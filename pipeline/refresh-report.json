@@ -1,56 +1,32 @@
 {
   "site": "ai",
-  "run_at": "2026-11-27T03:12:46.062639+00:00",
+  "run_at": "2026-11-28T03:05:56.371788+00:00",
   "dry_run": false,
   "fresh_verified": {
-    "jobicy_status_endpoint": 23,
-    "bounded_content_check": 4
+    "jobicy_status_endpoint": 24,
+    "bounded_content_check": 1
   },
   "carried": [],
   "archived": [
     {
-      "id": "strategy-ops-lead-applied-ai-clipboard-strategy-ops-lead-applied-ai-berlin-333117",
+      "id": "junior-applied-ai-engineer-illuin-technology-junior-applied-ai-engineer-puteaux-411786",
+      "reason": "carried verification older than 0d"
+    },
+    {
+      "id": "webdesigner-entwickler-wordpress-ai-m-w-d-any-marketing-gmbh-webdesigner-entwickler-wordpr",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
-      "id": "senior-leadership-ai-enablement-consultant-w-d-m-webuildai-g-senior-leadership-ai-enableme",
+      "id": "founding-full-stack-engineer-ai-m-f-d-limetax-founding-full-stack-engineer-ai-berlin-35574",
+      "reason": "absent from fresh fetch and verification stale"
+    },
+    {
+      "id": "ai-implementation-associate-internship-all-genders-lio-ai-implementation-associate-interns",
       "reason": "absent from fresh fetch and verification stale"
     },
     {
       "id": "senior-data-applied-ai-engineer-almentor-1d6448c1",
       "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "senior-consultant-ai-enablement-m-w-d-junto-education-gmbh-senior-consultant-ai-enablement",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "senior-ai-developer-m-w-d-hubside-die-recruitingwerkstatt-senior-ai-developer-munich-43188",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "data-ai-engineer-m-w-d-collaboration-betters-the-world-gmbh-data-ai-engineer-munich-99309",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "data-ai-engineer-frankfurt-or-munich-germany-unit8-data-ai-engineer-frankfurt-or-munich-ge",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "applied-ai-architect-large-enterprise-openai-applied-ai-architect-large-enterprise-paris-4",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "ai-engineer-m-w-d-collaboration-betters-the-world-gmbh-ai-engineer-munich-229989",
-      "reason": "absent from fresh fetch and verification stale"
-    },
-    {
-      "id": "director-of-ai-ml-bayesian-health-153513",
-      "reason": "jobicy status endpoint: closed"
-    },
-    {
-      "id": "applied-ai-ml-engineer-oddball-153362",
-      "reason": "jobicy status endpoint: closed"
     }
   ],
   "excluded": [
@@ -67,7 +43,7 @@
       "reason": "relevance_duties_unconfirmed"
     },
     {
-      "id": "product-engineer-ai-finance-bjak-163871",
+      "id": "senior-machine-learning-manager-borrowing-monzo-157407",
       "reason": "relevance_duties_unconfirmed"
     },
     {
@@ -75,28 +51,28 @@
       "reason": "relevance_duties_unconfirmed"
     },
     {
-      "id": "senior-google-ads-manager-ai-first-performance-marketing-m-w-senior-google-ads-manager-ai-",
+      "id": "machine-learning-engineer-models-in-production-m-f-d-advance-machine-learning-engineer-mod",
       "reason": "relevance_duties_unconfirmed"
     },
     {
-      "id": "marketing-manager-google-ads-ai-first-performance-marketing--marketing-manager-google-ads-",
+      "id": "senior-commercial-ai-solutions-partner-yopeso-romania-srl-remote-senior-commercial-ai-solu",
       "reason": "relevance_duties_unconfirmed"
     }
   ],
   "errors": [],
-  "prev_jobicy_status_checked": 13,
+  "prev_jobicy_status_checked": 12,
   "counts": {
-    "publishable": 28,
-    "prev": 31,
-    "fresh": 27,
+    "publishable": 26,
+    "prev": 28,
+    "fresh": 25,
     "carried": 0,
-    "archived": 11,
+    "archived": 5,
     "excluded": 7
   },
   "fresh_verified_by_source": {
     "arbeitnow": {
-      "eligible": 143,
-      "fresh_success": 24
+      "eligible": 142,
+      "fresh_success": 13
     }
   },
   "publication_gate": {
@@ -113,8 +89,8 @@
       ]
     },
     "source_counts": {
-      "jobicy": 369,
-      "arbeitnow": 844
+      "jobicy": 356,
+      "arbeitnow": 874
     }
   },
   "build_sha256_16": null,
@@ -123,7 +99,7 @@
     "reason": null,
     "requests": null,
     "unique": null,
-    "eligible": 34,
+    "eligible": 33,
     "promoted": 1,
     "folded": 1,
     "dropped": 0,
